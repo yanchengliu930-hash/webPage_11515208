@@ -3,475 +3,2436 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="新民咖啡 - 專為學生打造的高CP值平價沖泡咖啡！低階咖啡豆、大容量超實惠、咖啡因拉滿，熬夜期中、早八提神，一喝就上癮！">
+  <title>新民咖啡｜平價低階豆，極致高享受！學生沖泡咖啡上癮首選</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      /* 多巴胺彩色系品牌配色 (Colorful Palette) */
+      --color-yellow: #FFD214;
+      --color-orange: #FF6B35;
+      --color-pink: #FF3366;
+      --color-purple: #7048E8;
+      --color-cyan: #00C49F;
+      --color-blue: #1890FF;
+      --color-lime: #A0E040;
+      
+      --bg-cream: #FFFDF7;
+      --bg-card: #FFFFFF;
+      --text-dark: #1F2430;
+      --text-muted: #647087;
+      --border-dark: #1F2430;
+      
+      /* 復古大膽彩繪 Pop 陰影風格 */
+      --shadow-pop: 4px 4px 0px var(--border-dark);
+      --shadow-pop-lg: 7px 7px 0px var(--border-dark);
+      --shadow-pop-sm: 2px 2px 0px var(--border-dark);
+      --radius-box: 16px;
+      --radius-sm: 8px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      padding: 0;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .serif { font-family: "Noto Serif TC", serif; }
-    .eyebrow {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: 'Noto Sans TC', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: radial-gradient(#e0ded6 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* 頂部彩色警告/廣播條 */
+    .top-banner {
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--color-yellow),
+        var(--color-yellow) 15px,
+        #FFE066 15px,
+        #FFE066 30px
+      );
+      border-bottom: 3px solid var(--border-dark);
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      margin: 0 0 13px;
-      color: var(--blue);
+    }
+
+    .top-banner span.badge {
+      background: var(--color-pink);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 20px;
       font-size: 11px;
+      border: 2px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+    }
+
+    /* 導覽列 Navbar */
+    .site-header {
+      background: #FFFFFF;
+      border-bottom: 3px solid var(--border-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.04);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: var(--color-orange);
+      border: 3px solid var(--border-dark);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      box-shadow: var(--shadow-pop-sm);
+      transform: rotate(-3deg);
+      transition: transform 0.2s ease;
+    }
+
+    .logo-badge:hover {
+      transform: rotate(6deg) scale(1.05);
+    }
+
+    .brand-title {
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .brand-title small {
+      font-family: 'Fredoka', cursive;
+      font-size: 13px;
+      color: var(--color-purple);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-menu a {
       font-weight: 700;
-      letter-spacing: .18em;
+      font-size: 15px;
+      color: var(--text-dark);
+      position: relative;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.2s;
     }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
-    .section-title {
-      margin: 0;
-      font: 700 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .035em;
+
+    .nav-menu a:hover {
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-pop-sm);
+      transform: translateY(-2px);
     }
-    .section-title em { color: var(--blue); font-style: normal; }
-    .section-copy { max-width: 48ch; margin: 20px 0 0; color: var(--muted); }
-    .button {
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-streak {
+      background: var(--color-pink);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 9px 15px;
+      border: 2px solid var(--border-dark);
+      border-radius: 25px;
+      box-shadow: var(--shadow-pop-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-streak:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: var(--shadow-pop);
+      background: #ff1f57;
+    }
+
+    .cart-pill {
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      border-radius: 25px;
+      padding: 7px 14px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-pop-sm);
+      cursor: pointer;
+    }
+
+    /* 彩色按鈕通規 */
+    .pop-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      min-height: 50px;
-      padding: 12px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 26px;
+      border: 3px solid var(--border-dark);
+      border-radius: 12px;
+      box-shadow: var(--shadow-pop);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s;
+      cursor: pointer;
+    }
+
+    .pop-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-pop-lg);
+    }
+
+    .pop-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .btn-orange { background: var(--color-orange); color: #fff; }
+    .btn-yellow { background: var(--color-yellow); color: var(--text-dark); }
+    .btn-cyan { background: var(--color-cyan); color: #fff; }
+    .btn-purple { background: var(--color-purple); color: #fff; }
+    .btn-white { background: #fff; color: var(--text-dark); }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 0 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tag-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 2px solid var(--border-dark);
+      border-radius: 20px;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .tag-yellow { background: var(--color-yellow); color: var(--text-dark); }
+    .tag-pink { background: var(--color-pink); color: #fff; }
+    .tag-cyan { background: var(--color-cyan); color: #fff; }
+    .tag-purple { background: var(--color-purple); color: #fff; }
+
+    .hero-title {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(180deg, transparent 65%, var(--color-yellow) 65%);
+      display: inline;
+      padding: 0 4px;
+    }
+
+    .hero-title .mark-addict {
+      color: var(--color-pink);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title .mark-addict::after {
+      content: '⚡中毒級濃郁';
+      position: absolute;
+      top: -18px;
+      right: -25px;
+      font-size: 11px;
+      background: var(--color-purple);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 2px solid var(--border-dark);
+      transform: rotate(8deg);
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: #4a5568;
+      margin-bottom: 32px;
+      font-weight: 500;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .hero-perks {
+      display: flex;
+      gap: 24px;
+      padding-top: 20px;
+      border-top: 2px dashed #d5d3ca;
+    }
+
+    .perk-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      color: var(--text-dark);
     }
-    .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, a:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-    .button-primary { color: var(--navy); background: var(--sand); box-shadow: 0 9px 22px rgba(1, 35, 59, .2); }
-    .button-primary:hover { background: #f0c77f; }
-    .button-outline { color: #fff; border-color: rgba(255,255,255,.58); }
-    .button-outline:hover { background: rgba(255,255,255,.1); }
-    .arrow { font-size: 18px; line-height: 1; }
 
-    /* Header */
-    .site-header {
-      position: absolute;
-      z-index: 10;
-      width: 100%;
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255, .16);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
-    .brand { display: flex; align-items: center; gap: 12px; font: 700 20px/1 "Noto Serif TC", serif; letter-spacing: .11em; }
-    .brand-mark {
+    .perk-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      border-radius: 50%;
       display: grid;
-      width: 29px;
-      height: 29px;
       place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font: 700 19px/1 "Playfair Display", serif;
+      font-size: 12px;
     }
-    .brand small { display: block; margin-top: 5px; color: rgba(255,255,255,.64); font: 600 8px/1 sans-serif; letter-spacing: .21em; }
-    .nav-links { display: flex; align-items: center; gap: 29px; font-size: 13px; font-weight: 500; }
-    .nav-links a { position: relative; padding: 6px 0; }
-    .nav-links a:not(.nav-cta)::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--sky); transform: scaleX(0); transform-origin: right; transition: transform .22s; }
-    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-cta { padding: 8px 16px !important; border: 1px solid rgba(255,255,255,.55); }
-    .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; border: 0; color: #fff; background: transparent; }
 
-    /* Hero */
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); }
-    .hero::before {
-      content: "";
+    /* Hero 卡片右側視覺 */
+    .hero-visual-card {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop-lg);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      background-image: 
+        linear-gradient(45deg, #FFF9E6 25%, transparent 25%), 
+        linear-gradient(-45deg, #FFF9E6 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #FFF9E6 75%), 
+        linear-gradient(-45deg, transparent 75%, #FFF9E6 75%);
+      background-size: 20px 20px;
+    }
+
+    .coffee-bag-mockup {
+      background: linear-gradient(135deg, #2D1B0D, #4E2A12);
+      border: 3px solid var(--border-dark);
+      border-radius: 18px;
+      padding: 24px;
+      color: #fff;
+      position: relative;
+      box-shadow: 6px 8px 0 rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+      transform: rotate(-1.5deg);
+    }
+
+    .bag-top-clip {
       position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      padding: 4px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--text-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+    }
+
+    .bag-label {
+      background: var(--color-orange);
+      border: 2px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 10px;
+      box-shadow: 3px 3px 0 var(--border-dark);
+    }
+
+    .bag-name {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 2px 2px 0 var(--border-dark);
+    }
+
+    .bag-subtitle {
+      font-size: 13px;
+      color: #FFE6D5;
+      font-weight: 700;
+    }
+
+    .bag-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+      background: rgba(0,0,0,0.25);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    .floating-sticker {
+      position: absolute;
+      border: 2px solid var(--border-dark);
+      padding: 6px 14px;
+      font-weight: 900;
+      font-size: 12px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-pop-sm);
+      z-index: 2;
+    }
+
+    .stk-1 {
+      top: 18px;
+      right: 18px;
+      background: var(--color-pink);
+      color: #fff;
+      transform: rotate(12deg);
+    }
+
+    .stk-2 {
+      bottom: 24px;
+      left: 18px;
+      background: var(--color-lime);
+      color: var(--text-dark);
+      transform: rotate(-8deg);
+    }
+
+    .hero-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .stat-box .num {
+      font-family: 'Fredoka', cursive;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-purple);
+    }
+
+    .stat-box .txt {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* 數字數據跑馬看板 */
+    .metric-strip {
+      background: var(--color-purple);
+      border-top: 3px solid var(--border-dark);
+      border-bottom: 3px solid var(--border-dark);
+      color: #fff;
+      padding: 24px 0;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .metric-card {
+      border-right: 2px dashed rgba(255,255,255,0.3);
+      padding: 0 10px;
+    }
+
+    .metric-card:last-child {
+      border-right: none;
+    }
+
+    .metric-val {
+      font-family: 'Fredoka', cursive;
+      font-size: clamp(32px, 3.5vw, 42px);
+      font-weight: 700;
+      color: var(--color-yellow);
+      text-shadow: 2px 2px 0 var(--border-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0.95;
+    }
+
+    /* 章節標題 */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .sec-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--shadow-pop-sm);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .sec-title {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .sec-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Section 1: 為什麼學生要自己沖泡咖啡 (推廣沖泡咖啡) */
+    .why-brew-section {
+      padding: 90px 0;
+    }
+
+    .compare-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .compare-card {
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      padding: 32px;
+      position: relative;
+      box-shadow: var(--shadow-pop);
+      background: #FFFFFF;
+    }
+
+    .compare-card.bad {
+      background: #FFF1F0;
+      border-color: #CF1322;
+    }
+
+    .compare-card.bad .card-badge {
+      background: #CF1322;
+      color: #fff;
+    }
+
+    .compare-card.good {
+      background: #F6FFED;
+      border-color: var(--border-dark);
+      box-shadow: var(--shadow-pop-lg);
+    }
+
+    .compare-card.good .card-badge {
+      background: var(--color-cyan);
+      color: #fff;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: -15px;
+      left: 28px;
+      padding: 4px 16px;
+      border: 2px solid var(--border-dark);
+      border-radius: 20px;
+      font-weight: 900;
+      font-size: 13px;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .compare-title {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 10px 0 16px;
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .list-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* 學生省錢計算機 */
+    .calc-box {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop-lg);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input-label {
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .input-label span.val-badge {
+      background: var(--color-yellow);
+      border: 2px solid var(--border-dark);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+
+    .slider {
+      width: 100%;
+      height: 12px;
+      border-radius: 6px;
+      background: #E2E8F0;
+      outline: none;
+      border: 2px solid var(--border-dark);
+      appearance: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--color-orange);
+      border: 2px solid var(--border-dark);
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--border-dark);
+    }
+
+    .calc-result {
+      background: linear-gradient(135deg, var(--color-yellow), #FFF3A8);
+      border: 3px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .calc-result h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .savings-amount {
+      font-family: 'Fredoka', cursive;
+      font-size: clamp(38px, 4.5vw, 52px);
+      font-weight: 700;
+      color: var(--color-pink);
+      text-shadow: 2px 2px 0 var(--border-dark);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .calc-subtext {
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Section 2: 品牌風格 - 低階咖啡豆產品系列 */
+    .products-section {
+      padding: 90px 0;
+      background: #FFF9E6;
+      border-top: 3px solid var(--border-dark);
+      border-bottom: 3px solid var(--border-dark);
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid var(--border-dark);
+      border-radius: 25px;
+      font-weight: 800;
+      font-size: 14px;
+      background: #fff;
+      box-shadow: var(--shadow-pop-sm);
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-orange);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-pop);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 26px;
+    }
+
+    .product-card {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-pop-lg);
+    }
+
+    .card-top {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 3px solid var(--border-dark);
+      padding: 16px;
+    }
+
+    .card-top.bg-orange { background: linear-gradient(135deg, #FF6B35, #FF8E60); }
+    .card-top.bg-purple { background: linear-gradient(135deg, #7048E8, #9270F3); }
+    .card-top.bg-cyan   { background: linear-gradient(135deg, #00C49F, #42DFBF); }
+    .card-top.bg-yellow { background: linear-gradient(135deg, #FFD214, #FFE066); }
+
+    .bean-icon-large {
+      font-size: 64px;
+      filter: drop-shadow(3px 3px 0 var(--border-dark));
+      animation: floatBean 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBean {
+      from { transform: translateY(0px) rotate(-3deg); }
+      to { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    .card-badge-level {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #fff;
+      border: 2px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .card-badge-caffeine {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--color-pink);
+      color: #fff;
+      border: 2px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .bean-attributes {
+      background: #F8F9FA;
+      border: 2px solid #E9ECEF;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .attr-row {
+      display: flex;
+      justify-content: space-between;
+      color: #495057;
+    }
+
+    .attr-row span.val {
+      color: var(--color-purple);
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 2px dashed #E2E8F0;
+    }
+
+    .price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-wrap .price-unit {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .price-wrap .price-num {
+      font-family: 'Fredoka', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-orange);
+      line-height: 1;
+    }
+
+    .btn-buy {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 2px solid var(--border-dark);
+      border-radius: 8px;
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-pop-sm);
+      transition: all 0.15s ease;
+    }
+
+    .btn-buy:hover {
+      background: var(--color-orange);
+      color: #fff;
+      transform: translate(-1px, -1px);
+      box-shadow: var(--shadow-pop);
+    }
+
+    /* Section 3: 功能 - 「上癮」互動專區 (Addiction Feature Zone) */
+    .addict-zone-section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .addict-container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* 上癮診斷計算機 */
+    .quiz-card {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop-lg);
+      padding: 34px;
+    }
+
+    .quiz-step {
+      margin-bottom: 24px;
+    }
+
+    .step-question {
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-badge {
+      background: var(--color-purple);
+      color: #fff;
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--border-dark);
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .option-btn {
+      padding: 10px 14px;
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      background: #F8F9FA;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .option-btn:hover {
+      background: #E9ECEF;
+    }
+
+    .option-btn.selected {
+      background: var(--color-yellow);
+      border-color: var(--border-dark);
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .quiz-result-box {
+      margin-top: 24px;
+      padding: 20px;
+      background: #FFF4E5;
+      border: 2px solid var(--border-dark);
+      border-radius: 12px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .quiz-result-box.active {
+      display: block;
+    }
+
+    .res-score-bar {
+      height: 18px;
+      background: #E2E8F0;
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 10px 0 16px;
+    }
+
+    .res-score-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-yellow), var(--color-pink));
+      width: 0%;
+      transition: width 1s ease-in-out;
+    }
+
+    /* 今日續命打卡互動面板 */
+    .streak-card {
+      background: linear-gradient(135deg, var(--color-purple), #4D2CB8);
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop-lg);
+      padding: 34px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .streak-head {
+      margin-bottom: 24px;
+    }
+
+    .streak-head h3 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--color-yellow);
+      text-shadow: 2px 2px 0 var(--border-dark);
+      margin-bottom: 8px;
+    }
+
+    .streak-head p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .streak-meter {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .streak-counter {
+      font-family: 'Fredoka', cursive;
+      font-size: 58px;
+      font-weight: 700;
+      color: var(--color-yellow);
+      line-height: 1;
+      text-shadow: 3px 3px 0 var(--border-dark);
+    }
+
+    .btn-checkin-big {
+      background: var(--color-yellow);
+      color: var(--text-dark);
+      font-weight: 900;
+      font-size: 18px;
+      padding: 16px 24px;
+      border: 3px solid var(--border-dark);
+      border-radius: 14px;
+      box-shadow: var(--shadow-pop);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      transition: all 0.15s ease;
+    }
+
+    .btn-checkin-big:hover {
+      background: var(--color-lime);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-pop-lg);
+    }
+
+    .btn-checkin-big:active {
+      transform: translate(2px, 2px);
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .streak-reward {
+      margin-top: 16px;
+      font-size: 13px;
+      text-align: center;
+      font-weight: 700;
+      color: #FFD214;
+    }
+
+    /* Section 4: 宿舍零門檻 3 分鐘沖泡法教學 + 計時器 (推廣沖泡咖啡) */
+    .brew-guide-section {
+      padding: 90px 0;
+      background: #F0FDF4;
+      border-top: 3px solid var(--border-dark);
+      border-bottom: 3px solid var(--border-dark);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .step-card {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop);
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -16px;
+      left: 20px;
+      background: var(--color-orange);
+      color: #fff;
+      font-family: 'Fredoka', cursive;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 2px 14px;
+      border: 2px solid var(--border-dark);
+      border-radius: 20px;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .step-illustration {
+      font-size: 48px;
+      margin: 16px 0 14px;
+      text-align: center;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* 90秒沖泡計時器互動小工具 */
+    .timer-widget {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop-lg);
+      padding: 30px;
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .timer-title {
+      font-weight: 900;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .timer-display {
+      font-family: 'Fredoka', cursive;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--color-purple);
+      text-shadow: 3px 3px 0 var(--border-dark);
+      margin: 10px 0 18px;
+      line-height: 1;
+    }
+
+    .timer-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* Section 5: 學生上癮症狀牆 (目標受眾: 學生) */
+    .reviews-section {
+      padding: 90px 0;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: #FFFFFF;
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-box);
+      box-shadow: var(--shadow-pop);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .avatar-circ {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--border-dark);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      box-shadow: var(--shadow-pop-sm);
+    }
+
+    .reviewer-info h5 {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .reviewer-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .review-quote {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .addict-level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-dark);
+      width: fit-content;
+    }
+
+    /* Section 6: 學生認證專屬折扣 CTA */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--color-orange), #FF3366);
+      border-top: 3px solid var(--border-dark);
+      border-bottom: 3px solid var(--border-dark);
+      padding: 70px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 900;
+      margin-bottom: 14px;
+      text-shadow: 2px 2px 0 var(--border-dark);
+    }
+
+    .cta-content p {
+      font-size: 17px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .student-mail-form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      gap: 10px;
+    }
+
+    .student-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 3px solid var(--border-dark);
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: var(--shadow-pop-sm);
+      outline: none;
+    }
+
+    /* 頁尾 Footer */
+    .site-footer {
+      background: #1F2430;
+      color: #fff;
+      padding: 60px 0 30px;
+      border-top: 3px solid var(--border-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h4 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--color-yellow);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: #9CA3AF;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col h5 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--color-yellow);
+    }
+
+    .footer-caution {
+      background: #2D3748;
+      border: 2px solid #4A5568;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 12px;
+      color: #CBD5E0;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    /* 購物車側邊抽屜 Cart Drawer */
+    .cart-drawer-overlay {
+      position: fixed;
       inset: 0;
-      opacity: .36;
-      background: radial-gradient(circle at 76% 45%, rgba(55, 167, 212, .75), transparent 23%), linear-gradient(117deg, rgba(4,25,45,.22) 0 48%, rgba(5,47,78,.82) 78%);
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      display: none;
+      backdrop-filter: blur(2px);
     }
-    .hero::after {
-      content: "";
-      position: absolute;
+
+    .cart-drawer {
+      position: fixed;
       top: 0;
-      right: -180px;
-      width: 760px;
-      height: 760px;
-      border: 1px solid rgba(153,220,240,.22);
-      border-radius: 50%;
-      box-shadow: 0 0 0 62px rgba(153,220,240,.045), 0 0 0 180px rgba(153,220,240,.025);
-    }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; min-height: 704px; padding: 122px 0 72px; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero-title { max-width: 13ch; margin: 0; font: 900 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .075em; }
-    .hero-title .blue { color: var(--sky); }
-    .hero-lede { max-width: 42ch; margin: 26px 0 32px; color: rgba(255,255,255,.78); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-    .hero-note { margin-top: 28px; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .1em; }
-    .hero-art { position: relative; min-height: 453px; }
-    .sun { position: absolute; top: 2%; right: 14%; width: 166px; height: 166px; border-radius: 50%; background: #93d6e6; box-shadow: 0 0 65px rgba(145,215,233,.36); }
-    .mountain { position: absolute; right: -4%; bottom: 2%; width: 98%; height: 70%; clip-path: polygon(0 73%, 23% 42%, 37% 59%, 61% 10%, 73% 29%, 84% 0, 100% 37%, 100% 100%, 0 100%); background: linear-gradient(135deg, #0b7eac, #06446f 70%); opacity: .85; }
-    .mountain::after { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, transparent 38%, rgba(2,35,58,.72) 38.5% 100%); }
-    .coffee-vessel { position: absolute; z-index: 2; right: 17%; bottom: 0; width: 255px; filter: drop-shadow(0 22px 21px rgba(0,0,0,.23)); }
-    .dripper { position: relative; width: 205px; height: 132px; margin: 0 auto -5px; border: 4px solid #e9f8fa; border-top-width: 6px; border-radius: 10px 10px 44% 44%; background: linear-gradient(115deg, rgba(123,206,225,.5), rgba(26,118,161,.23)); clip-path: polygon(0 0,100% 0,78% 100%,22% 100%); }
-    .dripper::after { content: ""; position: absolute; inset: 18px 16px 0; border-top: 1px solid rgba(255,255,255,.6); border-left: 1px solid rgba(255,255,255,.25); transform: skewX(-17deg); }
-    .carafe { position: relative; width: 170px; height: 181px; margin: 0 auto; border: 4px solid #e9f8fa; border-radius: 9px 9px 39% 39% / 9px 9px 19% 19%; background: linear-gradient(90deg, rgba(110,211,229,.26), rgba(1,52,87,.52)); }
-    .carafe::before { content: ""; position: absolute; top: -16px; left: 27px; width: 108px; height: 20px; border: 4px solid #e9f8fa; border-bottom: 0; border-radius: 50% 50% 0 0; }
-    .carafe::after { content: ""; position: absolute; right: 16px; bottom: 24px; left: 16px; height: 60px; border-radius: 3px 3px 26px 26px; background: linear-gradient(90deg, rgba(133,67,26,.84), rgba(76,33,9,.92)); }
-    .art-label { position: absolute; z-index: 3; top: 50%; right: 2%; width: 114px; padding-left: 12px; border-left: 1px solid var(--sky); color: rgba(255,255,255,.78); font-size: 10px; line-height: 1.7; letter-spacing: .1em; }
-    .art-label strong { display: block; color: var(--sky); font: 600 20px/1 "Playfair Display", serif; }
-    .scroll-line { position: absolute; bottom: 23px; left: max(24px, calc((100% - 1120px) / 2)); z-index: 2; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.56); font-size: 10px; letter-spacing: .15em; }
-    .scroll-line::before { content: ""; width: 38px; height: 1px; background: currentColor; }
-
-    /* Intro */
-    .intro { padding: 118px 0; background: #fff; }
-    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .intro-stamp { position: relative; min-height: 355px; }
-    .stamp-circle { position: absolute; inset: 13px auto auto 0; display: grid; width: 290px; height: 290px; place-items: center; border: 1px solid #9dd7e7; border-radius: 50%; color: var(--blue); text-align: center; }
-    .stamp-circle::before { content: ""; position: absolute; inset: 14px; border: 1px dashed #a5d9e6; border-radius: 50%; }
-    .stamp-circle strong { display: block; font: 700 43px/1 "Playfair Display", serif; letter-spacing: -.04em; }
-    .stamp-circle span { display: block; margin-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .stamp-card { position: absolute; right: 0; bottom: 0; width: 216px; padding: 21px 23px; color: #fff; background: var(--blue); box-shadow: var(--shadow); }
-    .stamp-card p { margin: 0; font-size: 12px; line-height: 1.8; }
-    .stamp-card b { display: block; margin-bottom: 8px; color: var(--sky); font: 600 12px/1 "Playfair Display", serif; letter-spacing: .14em; }
-    .intro .section-copy { font-size: 16px; }
-    .intro-link { display: inline-flex; gap: 10px; margin-top: 28px; padding-bottom: 4px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 700; }
-
-    /* Coffees */
-    .coffee-section { padding: 110px 0 120px; background: var(--mist); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
-    .section-head .section-copy { max-width: 35ch; margin: 0; font-size: 14px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; overflow: hidden; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card::before { content: ""; position: absolute; right: -63px; bottom: -87px; width: 238px; height: 238px; border: 1px solid rgba(255,255,255,.29); border-radius: 50%; }
-    .coffee-card::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(160deg, transparent 42%, rgba(0,0,0,.28)); pointer-events: none; }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-content { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 384px; padding: 29px; }
-    .coffee-number { color: var(--sky); font: 600 13px/1 "Playfair Display", serif; letter-spacing: .08em; }
-    .coffee-origin { margin: auto 0 7px; color: rgba(255,255,255,.63); font-size: 11px; font-weight: 600; letter-spacing: .14em; }
-    .coffee-card h3 { margin: 0; font: 700 27px/1.35 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .coffee-notes { margin: 11px 0 22px; color: rgba(255,255,255,.75); font-size: 13px; }
-    .coffee-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
-    .price { font-size: 14px; font-weight: 700; }
-    .add-button { padding: 5px 0; border: 0; color: #fff; background: none; font-size: 12px; font-weight: 700; letter-spacing: .07em; }
-    .add-button:hover { color: var(--sand); }
-
-    /* Brew process */
-    .brew { overflow: hidden; padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 9vw, 112px); align-items: center; }
-    .brew-visual { position: relative; min-height: 396px; border: 1px solid var(--line); background: linear-gradient(140deg, #f4fafb 0 50%, #e5f4f7 50%); }
-    .brew-visual::before { content: ""; position: absolute; top: 35px; left: 34px; width: 70px; height: 1px; background: var(--blue); box-shadow: 0 9px 0 var(--blue), 0 18px 0 var(--blue); }
-    .pour-ring { position: absolute; top: 71px; right: 48px; width: 240px; height: 240px; border: 35px solid rgba(12,91,149,.13); border-radius: 50%; }
-    .pour-ring::after { content: ""; position: absolute; top: 45px; left: 45px; width: 80px; height: 80px; border: 3px solid var(--blue); border-radius: 50%; }
-    .brew-v60 { position: absolute; bottom: 35px; left: 51%; width: 178px; height: 150px; border: 4px solid var(--blue); background: rgba(255,255,255,.54); clip-path: polygon(0 0,100% 0,73% 100%,27% 100%); transform: translateX(-50%); }
-    .brew-v60::before { content: ""; position: absolute; top: 14px; right: 16px; bottom: 0; left: 16px; border-left: 1px solid #8dcce0; border-right: 1px solid #8dcce0; transform: skewX(-11deg); }
-    .brew-caption { position: absolute; right: 25px; bottom: 21px; color: var(--blue); font: 600 10px/1.4 "Playfair Display", serif; letter-spacing: .13em; text-align: right; }
-    .brew-steps { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .brew-steps li { display: grid; grid-template-columns: 43px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
-    .brew-steps li:last-child { border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font: 600 15px/1.7 "Playfair Display", serif; }
-    .step-copy b { display: block; font-size: 15px; }
-    .step-copy span { color: var(--muted); font-size: 13px; }
-
-    /* CTA and Footer */
-    .visit { position: relative; overflow: hidden; padding: 96px 0; color: #fff; background: var(--navy); text-align: center; }
-    .visit::before, .visit::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid rgba(117,198,232,.21); border-radius: 50%; }
-    .visit::before { top: -225px; left: -90px; }
-    .visit::after { right: -125px; bottom: -235px; }
-    .visit .wrap { position: relative; z-index: 1; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit .section-title { font-size: clamp(30px, 4vw, 45px); }
-    .visit p:not(.eyebrow) { max-width: 48ch; margin: 19px auto 28px; color: rgba(255,255,255,.73); }
-    .subscribe { display: flex; max-width: 500px; margin: 0 auto; border: 1px solid rgba(255,255,255,.5); }
-    .subscribe input { min-width: 0; flex: 1; padding: 13px 17px; border: 0; outline: none; color: #fff; background: transparent; }
-    .subscribe input::placeholder { color: rgba(255,255,255,.55); }
-    .subscribe button { padding: 0 22px; border: 0; color: var(--navy); background: var(--sand); font-size: 13px; font-weight: 700; white-space: nowrap; }
-    .subscribe button:hover { background: #f0c77f; }
-    footer { color: rgba(255,255,255,.67); background: #031c31; }
-    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 40px; padding: 58px 0 38px; }
-    .footer-brand { color: #fff; }
-    .footer-brand p { max-width: 31ch; margin: 16px 0 0; font-size: 13px; }
-    .footer-heading { margin: 0 0 15px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .footer-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
-    .footer-list li + li { margin-top: 8px; }
-    .footer-list a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.43); font-size: 11px; letter-spacing: .05em; }
-
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 20; max-width: min(330px, calc(100% - 44px)); padding: 13px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; font-size: 13px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .nav { min-height: 68px; }
-      .menu-toggle { display: block; width: 42px; height: 42px; font-size: 23px; }
-      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: grid; gap: 0; max-height: 0; overflow: hidden; background: #05233c; transition: max-height .27s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.12); }
-      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(255,255,255,.09); }
-      .nav-links .nav-cta { margin: 11px 24px; text-align: center; }
-      .hero, .hero-grid { min-height: 710px; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 115px; }
-      .hero-art { min-height: 278px; margin-top: -35px; }
-      .sun { right: 14%; width: 114px; height: 114px; }
-      .mountain { width: 82%; height: 92%; }
-      .coffee-vessel { right: 15%; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { top: 44%; right: 1%; }
-      .intro-grid, .brew-grid { grid-template-columns: 1fr; }
-      .intro-stamp { max-width: 510px; width: 100%; }
-      .coffee-grid { grid-template-columns: 1fr 1fr; }
-      .coffee-card:last-child { grid-column: span 2; }
-      .footer-top { grid-template-columns: 1.4fr 1fr; }
-      .footer-brand { grid-column: span 2; }
+      right: -420px;
+      width: min(400px, 100%);
+      height: 100%;
+      background: #fff;
+      border-left: 3px solid var(--border-dark);
+      z-index: 201;
+      box-shadow: -6px 0 0 rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 34px, 1120px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 100px; padding-bottom: 48px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin: 18px 0 23px; font-size: 14px; }
-      .hero-art { min-height: 240px; }
-      .art-label { display: none; }
-      .scroll-line { bottom: 12px; left: 17px; }
-      .intro, .coffee-section, .brew { padding: 76px 0; }
-      .stamp-circle { width: 245px; height: 245px; }
-      .stamp-card { width: 185px; padding: 16px; }
-      .section-head { display: block; }
-      .section-head .section-copy { margin-top: 15px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:last-child { grid-column: auto; min-height: 330px; }
-      .coffee-content { min-height: 330px; }
-      .brew-visual { min-height: 310px; }
-      .pour-ring { top: 48px; right: 25px; width: 190px; height: 190px; border-width: 27px; }
-      .visit { padding: 76px 0; }
-      .subscribe { display: block; border: 0; }
-      .subscribe input { width: 100%; border: 1px solid rgba(255,255,255,.5); }
-      .subscribe button { width: 100%; min-height: 48px; margin-top: 9px; }
-      .footer-top { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
+    .cart-drawer.open {
+      right: 0;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+    .cart-drawer-overlay.open {
+      display: block;
+    }
+
+    .cart-header {
+      padding: 20px;
+      border-bottom: 2px solid var(--border-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-yellow);
+    }
+
+    .cart-header h3 {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .cart-body {
+      padding: 20px;
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border: 2px solid var(--border-dark);
+      border-radius: 10px;
+      background: #F8F9FA;
+    }
+
+    .cart-footer {
+      padding: 20px;
+      border-top: 2px solid var(--border-dark);
+      background: #FFFDF7;
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    /* 動態 Toast 通知 */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--color-purple);
+      color: #fff;
+      border: 3px solid var(--border-dark);
+      box-shadow: var(--shadow-pop);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      z-index: 999;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* RWD 響應式微調 */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .calc-box { grid-template-columns: 1fr; }
+      .addict-container { grid-template-columns: 1fr; }
+      .compare-container { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .metric-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .metric-card { border-right: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-menu { display: none; }
+      .student-mail-form { flex-direction: column; }
+      .metric-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark">B</span>
-        <span>藍天咖啡<small>BLUE SKY COFFEE</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的堅持</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+  <!-- 頂部多巴胺廣播條 -->
+  <div class="top-banner">
+    <span class="badge">🔥 學生專屬福利</span>
+    <span>憑大專院校學生證，全系列平價豆滿 $299 免運再送「期末熬夜續命包」！</span>
+  </div>
+
+  <!-- 頂部導覽列 -->
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="logo-group">
+        <a href="#hero" class="logo-badge" title="新民咖啡">☕</a>
+        <div class="brand-title">
+          新民咖啡
+          <small>XINMIN COFFEE</small>
+        </div>
       </div>
-    </nav>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#why-brew">為什麼沖泡</a></li>
+          <li><a href="#products">平價豆專區</a></li>
+          <li><a href="#addict-quiz">上癮測驗</a></li>
+          <li><a href="#brew-guide">宿舍沖泡法</a></li>
+          <li><a href="#reviews">學生評價</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-streak" id="navCheckinBtn" onclick="triggerStreakCheckin()">
+          ⚡ 今日續命 <span id="navStreakCount">0</span>
+        </button>
+        <div class="cart-pill" onclick="toggleCartDrawer()">
+          🛒 購物籃 (<span id="cartCount">0</span>)
+        </div>
+      </div>
+    </div>
   </header>
 
+  <!-- Hero 主視覺區 -->
   <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid wrap">
-        <div class="reveal">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 class="hero-title" id="heroTitle">讓風味，<br>在<span class="blue">藍天</span>下<br>慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的你，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#coffee">探索本季風味 <span class="arrow">→</span></a>
-            <a class="button button-outline" href="#story">認識藍天</a>
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="hero-tags">
+            <span class="tag-chip tag-yellow">🎓 學生熬夜救星</span>
+            <span class="tag-chip tag-pink">💥 每杯只要 9 元起</span>
+            <span class="tag-chip tag-cyan">⚡ 咖啡因爆表</span>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2018</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain"></div>
-          <div class="coffee-vessel"><div class="dripper"></div><div class="carafe"></div></div>
-          <p class="art-label"><strong>92°C</strong>理想水溫<br>細細喚醒香氣</p>
-        </div>
-      </div>
-      <p class="scroll-line">SCROLL TO DISCOVER</p>
-    </section>
+          
+          <h1 class="hero-title">
+            喝一口就<span class="mark-addict">上癮</span>！<br>
+            專為學生打造的<span class="highlight">平價沖泡咖啡</span>
+          </h1>
 
-    <section class="intro" id="story" aria-labelledby="storyTitle">
-      <div class="intro-grid wrap">
-        <div class="intro-stamp reveal" aria-hidden="true">
-          <div class="stamp-circle"><div><strong>慢一點，<br>更清楚。</strong><span>LET THE FLAVOUR SPEAK</span></div></div>
-          <div class="stamp-card"><b>BLUE SKY NOTE</b><p>一杯好咖啡，從來不是匆忙完成的事。</p></div>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，<br>看見產地的<em>晴朗</em>。</h2>
-          <p class="section-copy">我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p class="section-copy">給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="intro-link" href="#brew">看看我們如何沖煮 <span>→</span></a>
-        </div>
-      </div>
-    </section>
+          <p class="hero-desc">
+            誰說喝咖啡一定要花幾百塊買精品豆裝文青？新民咖啡專注於<b>低階平價咖啡豆</b>，省去繁複華麗的包裝噱頭，把咖啡因濃度拉到極限。大容量、銅板價、宿舍飲水機熱水即沖，拯救每一個在期中考與專案死線前載浮載沉的靈魂！
+          </p>
 
-    <section class="coffee-section" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<em>藍天</em>？</h2></div>
-          <p class="section-copy">三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">01 / BRIGHT</span>
-              <p class="coffee-origin">ETHIOPIA · YIRGACHEFFE</p>
-              <h3>衣索比亞<br>耶加雪菲</h3>
-              <p class="coffee-notes">白花、佛手柑、蜂蜜</p>
-              <div class="coffee-bottom"><span class="price">NT$ 520 / 200g</span><button class="add-button" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
+          <div class="hero-actions">
+            <a href="#products" class="pop-btn btn-orange">⚡ 立即挑選平價豆</a>
+            <a href="#addict-quiz" class="pop-btn btn-yellow">🧪 測驗你的上癮指數</a>
+          </div>
+
+          <div class="hero-perks">
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>無器具門檻 (馬克杯即可)</span>
             </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">02 / JUICY</span>
-              <p class="coffee-origin">KENYA · KIRINYAGA</p>
-              <h3>肯亞<br>祈安布</h3>
-              <p class="coffee-notes">黑醋栗、洛神、葡萄柚</p>
-              <div class="coffee-bottom"><span class="price">NT$ 580 / 200g</span><button class="add-button" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>比超商咖啡省下 85%</span>
             </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">03 / ROUND</span>
-              <p class="coffee-origin">COLOMBIA · HUILA</p>
-              <h3>哥倫比亞<br>慧蘭</h3>
-              <p class="coffee-notes">黃桃、焦糖、可可尾韻</p>
-              <div class="coffee-bottom"><span class="price">NT$ 460 / 200g</span><button class="add-button" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>濃郁抗睡魔・真實有感</span>
             </div>
-          </article>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-visual-card">
+            <span class="floating-sticker stk-1">🔥 銷量破萬磅</span>
+            <span class="floating-sticker stk-2">⚡ 學生激推</span>
+
+            <div class="coffee-bag-mockup">
+              <div class="bag-top-clip">100% 學生高CP首選</div>
+              <div class="bag-label">
+                <div class="bag-name">新民特選・熬夜神豆</div>
+                <div class="bag-subtitle">Heavy Roast Student Fuel // 深焙爆汗配方</div>
+                <div class="bag-specs">
+                  <div>產地：平價多產區混豆</div>
+                  <div>烘焙：義式深焙 (Dark)</div>
+                  <div>特色：苦甜極濃、咖啡因強</div>
+                  <div>份量：454g 超大磅裝</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-stat-row">
+              <div class="stat-box">
+                <div class="num">$9.5</div>
+                <div class="txt">單杯自沖平均成本</div>
+              </div>
+              <div class="stat-box">
+                <div class="num">200mg</div>
+                <div class="txt">單杯平均咖啡因</div>
+              </div>
+              <div class="stat-box">
+                <div class="num">99.4%</div>
+                <div class="txt">學生續命回購率</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="brew-grid wrap">
-        <div class="brew-visual reveal" aria-hidden="true">
-          <div class="pour-ring"></div><div class="brew-v60"></div><p class="brew-caption">V60 / 15G : 240ML<br>2'45''</p>
+    <!-- 數據成果彩條 -->
+    <section class="metric-strip">
+      <div class="container metric-grid">
+        <div class="metric-card">
+          <div class="metric-val">32,800+</div>
+          <div class="metric-label">全台大專院校學生上癮認證</div>
         </div>
-        <div class="reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，<br>讓咖啡說<em>自己的話</em>。</h2>
-          <p class="section-copy">不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <ol class="brew-steps">
-            <li><span class="step-no">01</span><span class="step-copy"><b>研磨，先聞見期待</b><span>15g 中細研磨，讓香氣從指尖開始展開。</span></span></li>
-            <li><span class="step-no">02</span><span class="step-copy"><b>悶蒸，等待第一個呼吸</b><span>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</span></span></li>
-            <li><span class="step-no">03</span><span class="step-copy"><b>注水，保持自己的節奏</b><span>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</span></span></li>
-          </ol>
+        <div class="metric-card">
+          <div class="metric-val">NT$ 1,450</div>
+          <div class="metric-label">平均每月幫每位學生省下的咖啡錢</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">90 秒</div>
+          <div class="metric-label">宿舍飲水機沖泡搞定時間</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100%</div>
+          <div class="metric-label">無虛華溢價・扎實平價好豆</div>
         </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 class="section-title" id="visitTitle">把下一杯好咖啡，<br>寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="留下你的 Email" required>
-          <button type="submit">訂閱風味通信</button>
+    <!-- Section 1: 為什麼要推廣沖泡咖啡？ (用途: 推廣沖泡咖啡) -->
+    <section class="why-brew-section" id="why-brew">
+      <div class="container">
+        <div class="section-header">
+          <span class="sec-badge">Why Brew Yourself</span>
+          <h2 class="sec-title">為什麼學生都該學會「自己沖泡咖啡」？</h2>
+          <p class="sec-desc">告別每日排隊買超商冰塊水的日子，自己動手沖，省錢、濃醇、速度快！</p>
+        </div>
+
+        <div class="compare-container">
+          <div class="compare-card bad">
+            <span class="card-badge">傳統超商 / 連鎖咖啡店 💸</span>
+            <h3 class="compare-title">荷包大失血模式</h3>
+            <ul class="compare-list">
+              <li><span class="list-icon">❌</span> 一杯大冰美 $45~$65，喝一個月吃土半個月</li>
+              <li><span class="list-icon">❌</span> 半杯都是冰塊，咖啡因濃度被嚴重稀釋</li>
+              <li><span class="list-icon">❌</span> 早八前排隊結帳等到遲到被教授記曠課</li>
+              <li><span class="list-icon">❌</span> 每天製造一個拋棄式塑膠杯與吸管垃圾</li>
+            </ul>
+          </div>
+
+          <div class="compare-card good">
+            <span class="card-badge">新民咖啡・自沖模式 ☕</span>
+            <h3 class="compare-title">學霸省錢上癮模式</h3>
+            <ul class="compare-list">
+              <li><span class="list-icon">✅</span> 單杯最低 $9.5 銅板價，四年省下出國機票錢</li>
+              <li><span class="list-icon">✅</span> 原豆現磨/原裝濾掛，100% 純粹咖啡因直擊大腦</li>
+              <li><span class="list-icon">✅</span> 宿舍床邊 90 秒注水出杯，邊喝邊出門神采奕奕</li>
+              <li><span class="list-icon">✅</span> 環保環杯無負擔，還可以客製濃淡與加牛奶特調</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 學生省錢計算機 -->
+        <div class="calc-box">
+          <div class="calc-inputs">
+            <div>
+              <div class="input-label">
+                <span>你每天喝幾杯咖啡？</span>
+                <span class="val-badge"><span id="cupsVal">2</span> 杯</span>
+              </div>
+              <input type="range" min="1" max="5" value="2" class="slider" id="cupsInput" oninput="calculateSavings()">
+            </div>
+
+            <div>
+              <div class="input-label">
+                <span>外購每杯平均花費</span>
+                <span class="val-badge">NT$ <span id="priceVal">55</span></span>
+              </div>
+              <input type="range" min="35" max="150" step="5" value="55" class="slider" id="priceInput" oninput="calculateSavings()">
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); font-weight: 600;">
+              💡 新民咖啡單杯成本僅以 NT$ 10 計算，看看你改自己沖泡能省下多少錢！
+            </p>
+          </div>
+
+          <div class="calc-result">
+            <h4>切換為新民沖泡咖啡，你將省下：</h4>
+            <div class="savings-amount" id="savingsYear">NT$ 32,850</div>
+            <div class="calc-subtext" id="savingsDesc">
+              相當於一年可省下一台全新 iPad + AirPods，或者吃 320 頓學生排骨便當！
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 品牌風格 - 低階咖啡豆精選專區 (風格: 低階咖啡豆) -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-header">
+          <span class="sec-badge">Budget Beans Collection</span>
+          <h2 class="sec-title">平價低階豆專區：實惠、耐沖、極致高CP值</h2>
+          <p class="sec-desc">不炒作產區莊園神話，用實在的商業豆烘焙出直率濃烈的好滋味，每一分錢都花在咖啡因上！</p>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterProducts('all')">全部推薦豆款</button>
+          <button class="filter-btn" onclick="filterProducts('dark')">重焙抗睡魔</button>
+          <button class="filter-btn" onclick="filterProducts('filter')">吃土濾掛組</button>
+          <button class="filter-btn" onclick="filterProducts('bulk')">大容量學霸包</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- 產品 1 -->
+          <div class="product-card" data-category="dark">
+            <div class="card-top bg-orange">
+              <span class="card-badge-level">平價實用豆</span>
+              <span class="card-badge-caffeine">⚡ 咖啡因 5 星</span>
+              <div class="bean-icon-large">🫘</div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">早八不昏睡・超狂深焙豆</h3>
+              <p class="card-desc">羅布斯塔與阿拉比卡黃金混豆，直火深焙逼出厚實苦甜黑巧克力風味，專治早八眼皮打架！</p>
+              
+              <div class="bean-attributes">
+                <div class="attr-row"><span>烘焙度</span><span class="val">重度深焙</span></div>
+                <div class="attr-row"><span>苦甜感</span><span class="val">★★★★★</span></div>
+                <div class="attr-row"><span>酸度</span><span class="val">幾乎無酸</span></div>
+                <div class="attr-row"><span>沖泡建議</span><span class="val">濾壓 / 美式</span></div>
+              </div>
+
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-unit">454g (磅裝)</span>
+                  <span class="price-num">NT$ 189</span>
+                </div>
+                <button class="btn-buy" onclick="addToCart('早八不昏睡・超狂深焙豆', 189)">加入購物籃</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 產品 2 -->
+          <div class="product-card" data-category="dark">
+            <div class="card-top bg-purple">
+              <span class="card-badge-level">爆肝必備</span>
+              <span class="card-badge-caffeine">⚡ 咖啡因 5.5 星</span>
+              <div class="bean-icon-large">☕</div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">期中歐趴・通宵特調豆</h3>
+              <p class="card-desc">為死線戰士量身烘焙，超高耐萃度，即使沖第二次回沖依然濃郁帶勁，陪你迎戰黎明朝陽。</p>
+              
+              <div class="bean-attributes">
+                <div class="attr-row"><span>烘焙度</span><span class="val">中深烘焙</span></div>
+                <div class="attr-row"><span>堅果香</span><span class="val">★★★★☆</span></div>
+                <div class="attr-row"><span>回甘度</span><span class="val">高醇厚度</span></div>
+                <div class="attr-row"><span>沖泡建議</span><span class="val">手沖 / 摩卡壺</span></div>
+              </div>
+
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-unit">454g (磅裝)</span>
+                  <span class="price-num">NT$ 169</span>
+                </div>
+                <button class="btn-buy" onclick="addToCart('期中歐趴・通宵特調豆', 169)">加入購物籃</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 產品 3 -->
+          <div class="product-card" data-category="filter">
+            <div class="card-top bg-cyan">
+              <span class="card-badge-level">免器具神器</span>
+              <span class="card-badge-caffeine">⚡ 咖啡因 4 星</span>
+              <div class="bean-icon-large">📦</div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">月底吃土・小資鮮磨濾掛組</h3>
+              <p class="card-desc">單包只要 9.9 元！撕開掛在馬克杯上直接加熱水，吃土週期也能享有高品質咖啡因續命享受。</p>
+              
+              <div class="bean-attributes">
+                <div class="attr-row"><span>規格</span><span class="val">10包入 / 盒</span></div>
+                <div class="attr-row"><span>平均單包</span><span class="val">NT$ 9.9</span></div>
+                <div class="attr-row"><span>充氮保鮮</span><span class="val">180 天</span></div>
+                <div class="attr-row"><span>適用</span><span class="val">宿舍無壺族</span></div>
+              </div>
+
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-unit">10包 / 盒</span>
+                  <span class="price-num">NT$ 99</span>
+                </div>
+                <button class="btn-buy" onclick="addToCart('月底吃土・小資鮮磨濾掛組', 99)">加入購物籃</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 產品 4 -->
+          <div class="product-card" data-category="bulk">
+            <div class="card-top bg-yellow">
+              <span class="card-badge-level">室友揪團</span>
+              <span class="card-badge-caffeine">⚡ 咖啡因 4.5 星</span>
+              <div class="bean-icon-large">🎒</div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">寢室囤貨・3磅學霸大分享箱</h3>
+              <p class="card-desc">整整 3 磅大份量！寢室室友一起喝、期末做專案整隊分著喝，換算單杯不到 7 塊錢，CP值天花板！</p>
+              
+              <div class="bean-attributes">
+                <div class="attr-row"><span>總重量</span><span class="val">1,360g (3磅)</span></div>
+                <div class="attr-row"><span>可沖杯數</span><span class="val">約 90 杯</span></div>
+                <div class="attr-row"><span>密封設計</span><span class="val">單向排氣閥</span></div>
+                <div class="attr-row"><span>贈品</span><span class="val">附定量咖啡匙</span></div>
+              </div>
+
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-unit">3磅 超大箱</span>
+                  <span class="price-num">NT$ 449</span>
+                </div>
+                <button class="btn-buy" onclick="addToCart('寢室囤貨・3磅學霸大分享箱', 449)">加入購物籃</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 功能核心 - 「上癮」互動專區 (功能: 上癮) -->
+    <section class="addict-zone-section" id="addict-quiz">
+      <div class="container">
+        <div class="section-header">
+          <span class="sec-badge">Interactive Addiction Lab</span>
+          <h2 class="sec-title">咖啡因上癮實驗室：測測你的成癮指數！</h2>
+          <p class="sec-desc">期中考快到了，你的大腦還剩多少清醒度？透過互動測驗領取你的專屬「續命處方箋」！</p>
+        </div>
+
+        <div class="addict-container">
+          <!-- 上癮診斷測驗 -->
+          <div class="quiz-card">
+            <h3 style="font-family:'Zen Maru Gothic', sans-serif; font-size:22px; font-weight:900; margin-bottom: 20px;">
+              🧪 學生咖啡因成癮程度快篩
+            </h3>
+
+            <!-- 題目 1 -->
+            <div class="quiz-step">
+              <div class="step-question">
+                <span class="step-badge">1</span>
+                <span>你現在的疲勞與想睡程度？</span>
+              </div>
+              <div class="quiz-options">
+                <button class="option-btn" onclick="selectOption(this, 1, 10)">🥱 普通愛睏，還能撐</button>
+                <button class="option-btn" onclick="selectOption(this, 1, 25)">🤤 眼皮開始打架了</button>
+                <button class="option-btn" onclick="selectOption(this, 1, 35)">😵‍💫 靈魂出竅，在看幻覺</button>
+                <button class="option-btn" onclick="selectOption(this, 1, 40)">💀 瀕臨猝死，需要急救</button>
+              </div>
+            </div>
+
+            <!-- 題目 2 -->
+            <div class="quiz-step">
+              <div class="step-question">
+                <span class="step-badge">2</span>
+                <span>距離你下一個報告/考試死線還有多久？</span>
+              </div>
+              <div class="quiz-options">
+                <button class="option-btn" onclick="selectOption(this, 2, 10)">📅 還有一週以上</button>
+                <button class="option-btn" onclick="selectOption(this, 2, 20)">⏳ 後天交，得開始衝了</button>
+                <button class="option-btn" onclick="selectOption(this, 2, 30)">🚨 明天早八就要交！</button>
+                <button class="option-btn" onclick="selectOption(this, 2, 40)">💥 其實已經遲交 2 小時</button>
+              </div>
+            </div>
+
+            <!-- 題目 3 -->
+            <div class="quiz-step">
+              <div class="step-question">
+                <span class="step-badge">3</span>
+                <span>如果早上沒喝到咖啡，你會怎樣？</span>
+              </div>
+              <div class="quiz-options">
+                <button class="option-btn" onclick="selectOption(this, 3, 5)">😊 還好，喝水也行</button>
+                <button class="option-btn" onclick="selectOption(this, 3, 15)">😐 沒精神，心情煩躁</button>
+                <button class="option-btn" onclick="selectOption(this, 3, 25)">🤯 劇烈偏頭痛無法思考</button>
+                <button class="option-btn" onclick="selectOption(this, 3, 30)">🧟 根本無法起床變成殭屍</button>
+              </div>
+            </div>
+
+            <button class="pop-btn btn-purple" style="width: 100%; margin-top: 10px;" onclick="calculateQuizScore()">
+              🔍 分析我的上癮診斷報告
+            </button>
+
+            <!-- 診斷結果區塊 -->
+            <div class="quiz-result-box" id="quizResultBox">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <strong style="font-size:16px;">診斷結果：<span id="resAddictTitle">重度咖啡因成癮者</span></strong>
+                <span style="font-family:'Fredoka'; font-size:24px; color:var(--color-pink); font-weight:700;" id="resScoreText">88%</span>
+              </div>
+              <div class="res-score-bar">
+                <div class="res-score-fill" id="resScoreFill"></div>
+              </div>
+              <p style="font-size:13px; color:#4A5568; line-height:1.6; margin-bottom:12px;" id="resDescText">
+                警告！你的大腦神經突觸已完全被腺苷受體包圍，普通水分子無法喚醒你的意志。請立即補充高劑量深焙咖啡！
+              </p>
+              <div style="background:#fff; border:2px dashed var(--border-dark); padding:10px; border-radius:8px; font-size:12px; font-weight:700;">
+                💊 推薦處方：<span id="resRecommendBean" style="color:var(--color-orange);">早八不昏睡・超狂深焙豆</span> 
+                （已解鎖專屬上癮折價碼：<span style="color:var(--color-purple);">ADDICT90</span>）
+              </div>
+            </div>
+          </div>
+
+          <!-- 今日續命打卡互動 -->
+          <div class="streak-card">
+            <div class="streak-head">
+              <h3>⚡ 今日續命打卡機</h3>
+              <p>每天來新民咖啡打卡續命一次，紀錄你的大學咖啡因奮鬥史！連續打卡享更多學生好禮。</p>
+            </div>
+
+            <div class="streak-meter">
+              <div style="font-size: 13px; font-weight: 800; letter-spacing: 1px; margin-bottom: 4px;">當前連續續命天數</div>
+              <div class="streak-counter" id="streakDisplay">1</div>
+              <div style="font-size: 12px; opacity: 0.85; margin-top: 6px;">全台已有 14,892 位學生今天完成續命！</div>
+            </div>
+
+            <div>
+              <button class="btn-checkin-big" id="mainCheckinBtn" onclick="triggerStreakCheckin()">
+                <span>⚡ 按我今日續命打卡 (+1)</span>
+              </button>
+              <div class="streak-reward" id="streakMsg">
+                🎁 今日打卡成功！獲得 +10 點上癮精力值
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 宿舍 3 分鐘零門檻沖泡指南 + 計時器 (用途: 推廣沖泡咖啡) -->
+    <section class="brew-guide-section" id="brew-guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="sec-badge">Dorm Brewing Guide</span>
+          <h2 class="sec-title">宿舍零門檻：3 分鐘熱水即沖教學</h2>
+          <p class="sec-desc">沒有昂貴鵝頸手沖壺？沒關係！只要一個馬克杯與宿舍飲水機熱水，輕鬆搞定！</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">STEP 1</span>
+            <div class="step-illustration">🫗</div>
+            <h4 class="step-title">掛上馬克杯</h4>
+            <p class="step-desc">取出新民濾掛包（或放 15g 咖啡粉於濾杯中），輕輕撕開濾紙封口，左右撐開掛在任何一般馬克杯緣。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">STEP 2</span>
+            <div class="step-illustration">💧</div>
+            <h4 class="step-title">宿舍熱水浸潤悶蒸</h4>
+            <p class="step-desc">直接按壓宿舍飲水機「熱水鍵」，先少量注入熱水浸濕咖啡粉，靜置悶蒸 20 秒，讓咖啡香氣徹底炸裂釋放！</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">STEP 3</span>
+            <div class="step-illustration">☕</div>
+            <h4 class="step-title">注滿出杯・立刻回血</h4>
+            <p class="step-desc">分次注入熱水約 180~200ml（約馬克杯八分滿），移開濾掛包。一杯濃郁醇厚、提神醒腦的熱咖啡大功告成！</p>
+          </div>
+        </div>
+
+        <!-- 90秒沖泡計時器 -->
+        <div class="timer-widget">
+          <div class="timer-title">⏱️ 宿舍沖泡 90 秒黃金計時器</div>
+          <p style="font-size:13px; color:var(--text-muted);">注水開始時按下計時，90秒即刻享受最平衡濃醇風味！</p>
+          <div class="timer-display" id="timerDisplay">01:30</div>
+          <div class="timer-controls">
+            <button class="pop-btn btn-orange" id="startTimerBtn" onclick="toggleTimer()">開始倒數</button>
+            <button class="pop-btn btn-white" onclick="resetTimer()">重設</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 學生上癮真實評價 (受眾: 學生) -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="sec-badge">Student Reviews</span>
+          <h2 class="sec-title">學生上癮症狀牆：喝過的人都怎麼說？</h2>
+          <p class="sec-desc">來看看全台各大專院校的室友與學長姊們真實血淚告白！</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="avatar-circ" style="background:var(--color-yellow);">💻</div>
+              <div class="reviewer-info">
+                <h5>陳同學・資工系大三</h5>
+                <p>上癮資歷：8 個月</p>
+              </div>
+            </div>
+            <p class="review-quote">
+              「以前每天超商中熱美，一個月花快兩千超心痛。自從買了新民的深焙豆，在寢室用濾壓壺一沖，香味直接把室友香醒！而且咖啡因夠重，寫演算法 Debug 效率提升兩倍！」
+            </p>
+            <span class="addict-level-badge" style="background:#FFF3A8;">🔥 重度上癮・期末歐趴</span>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="avatar-circ" style="background:var(--color-pink); color:#fff;">📐</div>
+              <div class="reviewer-info">
+                <h5>林同學・建築系大四</h5>
+                <p>上癮資歷：1 年</p>
+              </div>
+            </div>
+            <p class="review-quote">
+              「評圖前三天必備『期中歐趴通宵特調』！它沒有那種花俏酸味，就是直截了當的厚實苦甜，連灌兩杯直接戰到隔天早上記錄完美模型，CP值真的沒話說。」
+            </p>
+            <span class="addict-level-badge" style="background:#FFE3E3;">⚡ 爆肝救星・已回購第6次</span>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="avatar-circ" style="background:var(--color-cyan); color:#fff;">💊</div>
+              <div class="reviewer-info">
+                <h5>張同學・醫學系大二</h5>
+                <p>上癮資歷：5 個月</p>
+              </div>
+            </div>
+            <p class="review-quote">
+              「月底吃土濾掛組真的神！一包不到十塊，宿舍飲水機熱水沖下去比超商好喝太多。每天早上八點大體解剖課前沒來一杯，整個人根本開不了機。」
+            </p>
+            <span class="addict-level-badge" style="background:#D3F9D8;">💸 省錢戰士・銅板價奇蹟</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 學生認證專屬折扣 CTA -->
+    <section class="cta-banner">
+      <div class="container cta-content">
+        <h2>輸入學校信箱，即享學生專屬 85 折！</h2>
+        <p>不管你是熬夜做報告、準備轉學考，還是只想在大學四年省下幾萬塊咖啡錢，新民咖啡挺你到底！</p>
+        
+        <form class="student-mail-form" onsubmit="handleStudentDiscount(event)">
+          <input type="email" placeholder="輸入你的 .edu.tw 學生信箱" class="student-input" id="studentEmail" required>
+          <button type="submit" class="pop-btn btn-yellow">領取折扣碼</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-top wrap">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark">B</span><span>藍天咖啡<small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-heading">EXPLORE</p><ul class="footer-list"><li><a href="#story">我們的堅持</a></li><li><a href="#coffee">本季選豆</a></li><li><a href="#brew">沖煮日常</a></li></ul></div>
-      <div><p class="footer-heading">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a></li><li>台北市大安區晴朗路 18 號</li><li>每日 10:00 — 19:00</li></ul></div>
+  <!-- 頁尾 Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>新民咖啡 XINMIN COFFEE</h4>
+          <p>
+            專為學生打造的高CP值沖泡咖啡品牌。大容量、低階實惠商業豆、極致濃郁提神，陪伴每一個努力追夢與熬夜抗戰的青春日子。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>規格與導覽</h5>
+          <ul>
+            <li><a href="#why-brew">為什麼自己沖泡</a></li>
+            <li><a href="#products">平價豆產品專區</a></li>
+            <li><a href="#addict-quiz">上癮快篩測驗</a></li>
+            <li><a href="#brew-guide">宿舍 3 分鐘教學</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>學生服務</h5>
+          <ul>
+            <li><a href="#reviews">真實學生心得</a></li>
+            <li><a href="#hero">學生認證優惠</a></li>
+            <li><a href="javascript:void(0)" onclick="toast('寢室團購滿 5 磅請私訊小編！')">寢室大宗團購</a></li>
+            <li><a href="javascript:void(0)" onclick="toast('咖啡渣可至各大校園合作點免費索取')">咖啡渣除臭利用</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>聯絡我們</h5>
+          <ul>
+            <li>服務時間：每日 08:00 - 02:00 (配合學生作息)</li>
+            <li>門市據點：各大專院校周邊合作社</li>
+            <li>信箱：student@xinmin-coffee.tw</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-caution">
+        ⚠️ <b>咖啡因攝取溫馨警語：</b> 本品牌咖啡豆萃取濃度高、風味醇厚濃烈，極易養成每日晨間依賴習慣。建議依期末考與專案進度酌量飲用，熬夜之餘仍請記得補充水分與適度休息！
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 新民咖啡 Xinmin Coffee. All Rights Reserved. 學號：11515208 作業成果頁面</span>
+        <span>設計風格：彩色多巴胺・平價實惠風</span>
+      </div>
     </div>
-    <div class="footer-bottom wrap"><span>© 2026 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- 購物籃側邊抽屜 -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 你的上癮續命清單</h3>
+      <button onclick="toggleCartDrawer()" style="font-size:20px; font-weight:900;">✕</button>
+    </div>
+    <div class="cart-body" id="cartItemList">
+      <div style="text-align:center; color:var(--text-muted); margin-top:40px;">
+        購物籃目前空空如也！<br>趕快去挑選平價好豆吧 ☕
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>結帳總金額：</span>
+        <span style="color:var(--color-orange); font-family:'Fredoka'; font-size:24px;" id="cartTotalText">NT$ 0</span>
+      </div>
+      <button class="pop-btn btn-orange" style="width:100%;" onclick="checkoutCart()">
+        立即結帳送宿舍 (享學生優惠)
+      </button>
+    </div>
+  </aside>
+
+  <!-- 浮動 Toast 提示 -->
+  <div class="toast-msg" id="toastBox">提示訊息</div>
+
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open);
-      menuToggle.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
-      menuToggle.textContent = open ? '×' : '☰';
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '開啟導覽選單');
-      menuToggle.textContent = '☰';
-    }));
+    /* ==========================================
+       新民咖啡 互動腳本邏輯 (Vanilla JavaScript)
+       ========================================== */
 
-    const toast = document.getElementById('toast');
-    let toastTimer;
-    function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
+    // 1. 省錢計算機
+    function calculateSavings() {
+      const cups = parseInt(document.getElementById('cupsInput').value);
+      const buyPrice = parseInt(document.getElementById('priceInput').value);
+      
+      document.getElementById('cupsVal').textContent = cups;
+      document.getElementById('priceVal').textContent = buyPrice;
+      
+      // 新民咖啡自沖成本約 10 元/杯
+      const selfPrice = 10;
+      const dailySaving = (buyPrice - selfPrice) * cups;
+      const yearlySaving = dailySaving * 365;
+      
+      document.getElementById('savingsYear').textContent = 'NT$ ' + yearlySaving.toLocaleString();
+      
+      let desc = '';
+      if (yearlySaving > 30000) {
+        desc = `一年可省下 ${yearlySaving.toLocaleString()} 元！相當於現賺一台高階筆電或整學期生活費！`;
+      } else {
+        desc = `一年可省下 ${yearlySaving.toLocaleString()} 元！吃大餐、買新衣服都綽綽有餘！`;
+      }
+      document.getElementById('savingsDesc').textContent = desc;
     }
-    document.querySelectorAll('[data-coffee]').forEach(button => button.addEventListener('click', () => {
-      showToast(`已將「${button.dataset.coffee}」加入你的收藏。`);
-    }));
-    document.getElementById('subscribeForm').addEventListener('submit', event => {
-      event.preventDefault();
-      event.currentTarget.reset();
-      showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-    });
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(item => item.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+    // 2. 產品過濾標籤
+    function filterProducts(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. 上癮程度快篩測驗
+    const quizAnswers = { 1: 0, 2: 0, 3: 0 };
+
+    function selectOption(btn, qNum, score) {
+      const parent = btn.parentElement;
+      const siblings = parent.querySelectorAll('.option-btn');
+      siblings.forEach(el => el.classList.remove('selected'));
+      btn.classList.add('selected');
+      quizAnswers[qNum] = score;
+    }
+
+    function calculateQuizScore() {
+      if (quizAnswers[1] === 0 || quizAnswers[2] === 0 || quizAnswers[3] === 0) {
+        toast('請先回答全部 3 道題目唷！');
+        return;
+      }
+
+      const total = quizAnswers[1] + quizAnswers[2] + quizAnswers[3];
+      const max = 110;
+      const percent = Math.min(99, Math.round((total / max) * 100));
+
+      const resultBox = document.getElementById('quizResultBox');
+      resultBox.classList.add('active');
+
+      document.getElementById('resScoreText').textContent = percent + '%';
+      
+      setTimeout(() => {
+        document.getElementById('resScoreFill').style.width = percent + '%';
+      }, 50);
+
+      const titleEl = document.getElementById('resAddictTitle');
+      const descEl = document.getElementById('resDescText');
+      const beanEl = document.getElementById('resRecommendBean');
+
+      if (percent >= 80) {
+        titleEl.textContent = '重度中毒級・死線狂戰士';
+        descEl.textContent = '你的體內血液有 70% 是咖啡因！眼皮快閉上了對吧？普通拿鐵救不了你，只有新民特調重焙能讓你重獲新生！';
+        beanEl.textContent = '早八不昏睡・超狂深焙豆 (大磅裝)';
+      } else if (percent >= 50) {
+        titleEl.textContent = '中度依賴型・期中求生者';
+        descEl.textContent = '屬於穩定需要咖啡因刺激的學霸體質，每天一杯剛剛好，自己沖泡健康又大省生活費！';
+        beanEl.textContent = '期中歐趴・通宵特調豆';
+      } else {
+        titleEl.textContent = '輕度入門・吃土省錢小資族';
+        descEl.textContent = '你偶爾想喝一杯咖啡醒腦，追求最高性價比。推薦免器具的平價濾掛組，隨沖隨喝！';
+        beanEl.textContent = '月底吃土・小資鮮磨濾掛組';
+      }
+
+      toast('上癮診斷完成！處方箋已生成 🧪');
+    }
+
+    // 4. 今日續命打卡計數
+    let streakCount = 1;
+    let hasCheckedInToday = false;
+
+    function triggerStreakCheckin() {
+      if (!hasCheckedInToday) {
+        streakCount++;
+        hasCheckedInToday = true;
+        document.getElementById('streakDisplay').textContent = streakCount;
+        document.getElementById('navStreakCount').textContent = streakCount;
+        document.getElementById('streakMsg').innerHTML = `🎉 今日打卡成功！連續續命 <b>${streakCount}</b> 天！已解鎖學生滿額贈禮`;
+        toast(`⚡ 今日已成功續命！連續 ${streakCount} 天`);
+      } else {
+        toast('今日已續命打卡過囉！喝杯新民咖啡提提神吧 ☕');
+      }
+    }
+
+    // 5. 90秒沖泡計時器
+    let timerDuration = 90;
+    let timerRemaining = 90;
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60).toString().padStart(2, '0');
+      const s = (secs % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function toggleTimer() {
+      const btn = document.getElementById('startTimerBtn');
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.textContent = '繼續計時';
+        btn.className = 'pop-btn btn-orange';
+      } else {
+        isTimerRunning = true;
+        btn.textContent = '暫停計時';
+        btn.className = 'pop-btn btn-yellow';
+        timerInterval = setInterval(() => {
+          if (timerRemaining > 0) {
+            timerRemaining--;
+            document.getElementById('timerDisplay').textContent = formatTime(timerRemaining);
+          } else {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            btn.textContent = '沖泡完成！';
+            toast('☕ 叮！90秒沖泡完成，咖啡香氣已炸裂，請享用！');
           }
-        });
-      }, { threshold: .12 });
-      revealItems.forEach(item => observer.observe(item));
+        }, 1000);
+      }
     }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      timerRemaining = 90;
+      document.getElementById('timerDisplay').textContent = formatTime(timerRemaining);
+      const btn = document.getElementById('startTimerBtn');
+      btn.textContent = '開始倒數';
+      btn.className = 'pop-btn btn-orange';
+    }
+
+    // 6. 購物車清單管理
+    let cartItems = [];
+
+    function addToCart(title, price) {
+      cartItems.push({ title, price });
+      updateCartUI();
+      toast(`已將「${title}」加入上癮清單！`);
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cartCount');
+      const listEl = document.getElementById('cartItemList');
+      const totalEl = document.getElementById('cartTotalText');
+
+      countEl.textContent = cartItems.length;
+
+      if (cartItems.length === 0) {
+        listEl.innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px;">購物籃目前空空如也！<br>趕快去挑選平價好豆吧 ☕</div>`;
+        totalEl.textContent = 'NT$ 0';
+        return;
+      }
+
+      let total = 0;
+      let html = '';
+      cartItems.forEach((item, idx) => {
+        total += item.price;
+        html += `
+          <div class="cart-item">
+            <div>
+              <div style="font-weight:800; font-size:14px;">${item.title}</div>
+              <div style="font-size:12px; color:var(--color-orange); font-weight:700;">NT$ ${item.price}</div>
+            </div>
+            <button onclick="removeCartItem(${idx})" style="color:#CF1322; font-weight:800; font-size:12px;">移除</button>
+          </div>
+        `;
+      });
+
+      listEl.innerHTML = html;
+      totalEl.textContent = 'NT$ ' + total.toLocaleString();
+    }
+
+    function removeCartItem(idx) {
+      cartItems.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function toggleCartDrawer() {
+      document.getElementById('cartDrawer').classList.toggle('open');
+      document.getElementById('cartOverlay').classList.toggle('open');
+    }
+
+    function checkoutCart() {
+      if (cartItems.length === 0) {
+        toast('購物籃是空的，請先挑選商品！');
+        return;
+      }
+      alert('🎉 感謝訂購！已為您套用學生專屬 85 折免運優惠，新民咖啡將以最快速度送達宿舍警衛室！');
+      cartItems = [];
+      updateCartUI();
+      toggleCartDrawer();
+    }
+
+    // 7. 學生信箱認證優惠碼領取
+    function handleStudentDiscount(e) {
+      e.preventDefault();
+      const email = document.getElementById('studentEmail').value;
+      if (email.includes('@')) {
+        alert(`🎓 驗證成功！學生專屬 85 折優惠券已寄送至 ${email}，結帳輸入折扣碼【STUDENTPASS】即享全單 85 折與滿額免運！`);
+        document.getElementById('studentEmail').value = '';
+      }
+    }
+
+    // 8. 浮動 Toast 提示小工具
+    let toastTimeout;
+    function toast(msg) {
+      const box = document.getElementById('toastBox');
+      box.textContent = msg;
+      box.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        box.classList.remove('show');
+      }, 2500);
+    }
+
+    // 初始化呼叫計算機
+    window.addEventListener('DOMContentLoaded', () => {
+      calculateSavings();
+    });
   </script>
 </body>
 </html>
