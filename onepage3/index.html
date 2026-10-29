@@ -1,71 +1,528 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="新民咖啡為忙碌的學生準備平價、高 CP 值咖啡與咖啡豆。探索商品、計算咖啡習慣、參加咖啡因小測驗，學習手沖並享學生優惠。">
-  <title>新民咖啡｜平價高 CP 值咖啡，陪你忙裡偷閒、找回專注</title>
+  <meta name="description" content="新民咖啡，專為學生打造的平價沖泡咖啡。從早八到期中考，用簡單沖泡與實在價格陪你度過忙碌日常。">
+  <meta name="theme-color" content="#fffdf7">
+  <title>新民咖啡｜平價低階豆，極致高享受！學生沖泡咖啡上癮首選</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root{--yellow:#FFD214;--orange:#FF6B35;--pink:#FF3366;--purple:#7048E8;--cyan:#00C49F;--blue:#1890FF;--lime:#A0E040;--cream:#FFFDF7;--white:#fff;--ink:#1F2430;--muted:#647087;--line:#1F2430;--shadow:4px 4px 0 var(--ink);--shadow-lg:7px 7px 0 var(--ink);--shadow-sm:2px 2px 0 var(--ink)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.65 "Noto Sans TC",sans-serif}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{color:inherit}.container{width:min(1200px,calc(100% - 40px));margin-inline:auto}.section{padding:90px 0}.eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--purple);font-size:13px;font-weight:900;letter-spacing:.08em}.eyebrow:before{content:"✦";color:var(--orange)}h1,h2,h3,p{margin-top:0}h1,h2,.brand-name{font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif;font-weight:900;line-height:1.25}h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}h3{line-height:1.4}.muted{color:var(--muted)}.pill{display:inline-flex;align-items:center;border:2px solid var(--ink);border-radius:99px;background:var(--yellow);padding:4px 12px;font-size:12px;font-weight:900}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:48px;padding:10px 20px;border:3px solid var(--ink);border-radius:12px;background:var(--yellow);box-shadow:var(--shadow-sm);font-weight:900;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s}.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.btn:active{transform:translate(2px,2px);box-shadow:none}.btn.secondary{background:var(--white)}.btn.pink{background:var(--pink);color:#fff}.btn.cyan{background:var(--cyan)}.btn.small{min-height:40px;padding:7px 13px;font-size:14px}
-    .promo-bar{padding:8px 15px;border-bottom:2px solid var(--ink);background:var(--yellow);text-align:center;font-size:13px;font-weight:900}.promo-bar a{text-decoration:underline;text-underline-offset:3px}.site-header{position:sticky;top:0;z-index:100;border-bottom:3px solid var(--ink);background:rgba(255,253,247,.96);backdrop-filter:blur(12px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand-mark{display:grid;place-items:center;width:44px;height:44px;border:3px solid var(--ink);border-radius:50%;background:var(--yellow);box-shadow:var(--shadow-sm);font-size:24px;transform:rotate(-3deg);transition:transform .2s}.brand:hover .brand-mark{transform:rotate(3deg) scale(1.06)}.brand-name{font-size:18px}.brand small{display:block;font:700 10px Fredoka,sans-serif;letter-spacing:.1em}.nav-menu{display:flex;align-items:center;gap:19px;margin:0;padding:0;list-style:none;font-size:14px;font-weight:700}.nav-menu a:not(.btn):hover{color:var(--orange)}.nav-actions{display:flex;align-items:center;gap:9px}.cart-button{position:relative}.count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:50%;background:var(--pink);color:#fff;font:700 13px Fredoka,sans-serif}.icon-button{width:42px;height:42px;border:2px solid var(--ink);border-radius:11px;background:white;cursor:pointer}.menu-toggle{display:none}
-    .hero{padding:66px 0 72px;background:radial-gradient(circle at 85% 20%,#fff1a5,transparent 28%),linear-gradient(135deg,#fff8cf 0%,#fffdf7 60%)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.hero h1{font-size:clamp(38px,5vw,58px);margin:13px 0 18px}.hero h1 em{font-style:normal;color:var(--orange);text-shadow:2px 2px 0 var(--ink)}.hero-lede{max-width:590px;color:#4c5360;font-size:18px}.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin:24px 0}.hero-art{position:relative;min-height:380px;display:grid;place-items:center}.coffee-bag{position:relative;z-index:1;width:min(290px,75%);height:310px;border:4px solid var(--ink);border-radius:24px 24px 35px 35px;background:linear-gradient(135deg,#ff9c70,#ff6b35);box-shadow:var(--shadow-lg);transform:rotate(4deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}.coffee-bag:before{content:"";position:absolute;top:20px;width:75%;height:12px;border:3px solid var(--ink);border-radius:9px;background:#ffd9b7}.bag-cup{font-size:86px;line-height:1.1;filter:drop-shadow(2px 3px 0 var(--ink))}.coffee-bag strong{font:900 26px "Zen Maru Gothic"}.coffee-bag small{font:700 13px Fredoka;letter-spacing:.14em}.spark{position:absolute;font-size:42px;color:var(--purple);text-shadow:2px 2px var(--ink)}.spark.one{left:7%;top:13%}.spark.two{right:4%;bottom:14%;color:var(--cyan)}.hero-note{position:absolute;z-index:2;right:1%;top:7%;padding:9px 13px;border:3px solid var(--ink);border-radius:14px;background:var(--lime);box-shadow:var(--shadow-sm);font-weight:900;transform:rotate(5deg)}.hero-badge{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;font-weight:700}
-    .stats{padding:24px 0;border-block:3px solid var(--ink);background:var(--purple);color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}.stat strong{display:block;font:700 clamp(27px,3vw,36px) Fredoka,sans-serif;color:var(--yellow)}.stat span{font-size:13px;font-weight:700}
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px}.why-copy{max-width:540px}.why-copy>p:not(.eyebrow){color:var(--muted)}.benefits{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:25px}.benefit{padding:14px;border:2px solid var(--ink);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm)}.benefit b{display:block}.benefit span{font-size:13px;color:var(--muted)}.savings-card{padding:25px;border:3px solid var(--ink);border-radius:18px;background:#fff;box-shadow:var(--shadow-lg)}.savings-card h3{margin-bottom:4px}.slider-row{margin:19px 0}.slider-label{display:flex;justify-content:space-between;gap:8px;font-weight:700}.slider-label strong{color:var(--orange);font-family:Fredoka,sans-serif;font-size:20px}input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer}.savings-result{display:flex;align-items:center;gap:14px;margin-top:15px;padding:14px;border:2px dashed var(--ink);border-radius:12px;background:#fff7ca}.savings-result .big{font:700 34px Fredoka;color:var(--orange)}.savings-result p{margin:0;font-size:13px}
-    .products-section{background:#fff1e7;border-block:3px solid var(--ink)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:25px}.section-head p{max-width:380px;margin:0;color:var(--muted)}.filters{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 26px}.filter-btn{padding:8px 15px;border:2px solid var(--ink);border-radius:99px;background:#fff;font-weight:800;cursor:pointer}.filter-btn.active,.filter-btn:hover{background:var(--yellow);box-shadow:var(--shadow-sm);transform:translateY(-2px)}.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:24px}.product-card{overflow:hidden;border:3px solid var(--ink);border-radius:16px;background:white;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-6px);box-shadow:7px 10px 0 var(--ink)}.product-visual{height:160px;display:grid;place-items:center;background:linear-gradient(135deg,#ffe8a1,#fff5d4);font-size:78px;border-bottom:3px solid var(--ink)}.product-card:nth-child(2) .product-visual{background:linear-gradient(135deg,#ffc5bb,#fff0e9)}.product-card:nth-child(3) .product-visual{background:linear-gradient(135deg,#b5f0da,#eafff5)}.product-card:nth-child(4) .product-visual{background:linear-gradient(135deg,#d2c5ff,#f5f0ff)}.product-body{padding:16px}.product-meta{display:flex;justify-content:space-between;gap:8px;align-items:center}.product-meta .pill{background:#f2f4f8}.product-card h3{margin:12px 0 5px;font-size:19px}.product-card p{min-height:48px;margin:0;color:var(--muted);font-size:13px}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:14px}.price{font:700 22px Fredoka,sans-serif;color:var(--orange)}
-    .quiz-section{background:#e9e3ff;border-bottom:3px solid var(--ink)}.quiz-wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;align-items:start}.quiz-intro{position:sticky;top:100px}.quiz-card{padding:25px;border:3px solid var(--ink);border-radius:18px;background:#fff;box-shadow:var(--shadow-lg)}.question{padding:16px 0;border-bottom:2px dashed #cdd1db}.question:last-of-type{border:0}.question h3{margin:0 0 12px;font-size:16px}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.option{min-height:44px;padding:8px;border:2px solid var(--ink);border-radius:10px;background:#fff;cursor:pointer;font-weight:700}.option.selected{background:var(--yellow);box-shadow:var(--shadow-sm);transform:translateY(-2px)}.quiz-result{display:none;margin-top:18px;padding:17px;border:3px solid var(--ink);border-radius:14px;background:#e8fff4}.quiz-result.active{display:block}.quiz-result strong{font:700 32px Fredoka;color:var(--purple)}.streak-box{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:20px;padding:16px;border:2px solid var(--ink);border-radius:14px;background:#fff3ce}.streak-box p{margin:0;font-size:14px}
-    .brew-grid{display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center}.brew-illustration{min-height:340px;display:grid;place-items:center;border:3px solid var(--ink);border-radius:18px;background:linear-gradient(135deg,#dff9f3,#fbfff6);box-shadow:var(--shadow-lg);font-size:120px}.video-wrap{width:100%;aspect-ratio:560/315;overflow:hidden;border:3px solid var(--ink);border-radius:16px;background:#1f2430;box-shadow:var(--shadow-lg)}.video-wrap iframe{width:100%;height:100%;border:0}.steps{display:grid;gap:13px;margin:23px 0}.step{display:grid;grid-template-columns:48px 1fr;gap:13px;padding:13px;border:2px solid var(--ink);border-radius:13px;background:#fff}.step-no{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--yellow);font:700 19px Fredoka}.step h3{margin:0 0 2px}.step p{margin:0;color:var(--muted);font-size:13px}.timer{display:flex;align-items:center;gap:15px;padding:15px;border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm)}.timer-display{font:700 36px Fredoka;min-width:105px}.timer-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .reviews-section{background:#ffe6ec;border-block:3px solid var(--ink)}.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}.review{padding:20px;border:3px solid var(--ink);border-radius:15px;background:#fff;box-shadow:var(--shadow)}.stars{color:#f3a900;letter-spacing:2px}.review blockquote{margin:12px 0;font-weight:700}.review footer{font-size:13px;color:var(--muted)}
-    .student-section{padding:72px 0;background:var(--purple);color:#fff}.student-box{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.student-box .eyebrow{color:var(--yellow)}.student-box p{color:#eee8ff}.discount{font:700 clamp(32px,5vw,52px) Fredoka;color:var(--yellow);text-shadow:2px 2px var(--ink)}.student-form{display:flex;gap:9px;padding:8px;border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:var(--shadow)}.student-form input{flex:1;min-width:0;border:0;padding:8px;outline:0;color:var(--ink)}
-    .site-footer{padding:50px 0 20px;background:#1f2430;color:#f9f7f0}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:28px}.site-footer .brand-name{color:white}.footer-title{color:var(--yellow);font-weight:900}.footer-links{display:grid;gap:7px;font-size:14px}.footer-links a:hover{color:var(--yellow)}.footer-bottom{display:flex;justify-content:space-between;gap:15px;margin-top:32px;padding-top:16px;border-top:1px solid #59606d;font-size:12px;color:#c7c9d0}
-    .overlay{position:fixed;inset:0;z-index:199;background:rgba(20,24,32,.5);opacity:0;visibility:hidden;transition:.25s}.overlay.open{opacity:1;visibility:visible}.cart-drawer{position:fixed;z-index:200;top:0;right:0;width:min(430px,100%);height:100dvh;padding:22px;background:var(--cream);border-left:3px solid var(--ink);transform:translateX(105%);transition:transform .28s;display:flex;flex-direction:column}.cart-drawer.open{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:12px}.drawer-head h2{font-size:25px;margin:0}.cart-list{flex:1;overflow:auto;padding:14px 0}.cart-empty{padding:50px 10px;text-align:center;color:var(--muted)}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid #d9dce3}.cart-item p{margin:0;font-weight:800}.cart-item small{color:var(--muted)}.cart-total{border-top:2px solid var(--ink);padding-top:14px}.cart-total div{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin-bottom:13px}.cart-total .btn{width:100%}.toast{position:fixed;z-index:300;left:50%;bottom:24px;max-width:calc(100% - 32px);padding:13px 20px;border:3px solid var(--ink);border-radius:12px;background:var(--ink);color:white;box-shadow:var(--shadow);transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
-    @media(max-width:900px){.nav-menu{gap:11px;font-size:13px}.nav-actions .btn{padding-inline:12px}.hero-grid{grid-template-columns:1fr  .8fr;gap:20px}.why-grid,.quiz-wrap,.brew-grid{grid-template-columns:1fr}.quiz-intro{position:static}.reviews-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.student-box{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.container{width:calc(100% - 32px)}.section{padding:66px 0}.nav{height:66px}.menu-toggle{display:grid;place-items:center}.nav-menu{position:absolute;left:0;right:0;top:66px;display:none;align-items:stretch;gap:0;padding:8px 16px 15px;border-bottom:3px solid var(--ink);background:var(--cream)}.nav-menu.open{display:flex;flex-direction:column}.nav-menu li>a:not(.btn){display:block;padding:11px 8px}.nav-actions .discount-link{display:none}.brand-name{font-size:16px}.brand-mark{width:39px;height:39px}.hero{padding:46px 0 35px}.hero-grid{grid-template-columns:1fr;gap:5px}.hero h1{font-size:clamp(36px,11vw,48px)}.hero-lede{font-size:16px}.hero-art{min-height:300px}.coffee-bag{height:260px;width:235px}.bag-cup{font-size:68px}.hero-note{right:4%;top:3%}.stats-grid{grid-template-columns:1fr 1fr;gap:20px 8px}.section-head{display:block}.section-head>p{margin-top:10px}.benefits{grid-template-columns:1fr 1fr}.savings-card{padding:18px}.quiz-card{padding:15px}.options{grid-template-columns:1fr 1fr}.brew-illustration{min-height:240px}.reviews-grid{grid-template-columns:1fr}.student-box{grid-template-columns:1fr}.student-form{flex-direction:column}.student-form .btn{width:100%}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-grid>div:first-child{grid-column:span 2}.footer-bottom{display:block;line-height:2}.footer-bottom span{display:block}.timer{align-items:flex-start;flex-direction:column}.cart-drawer{padding:17px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+    :root {
+      --yellow: #ffd214;
+      --orange: #ff6b35;
+      --pink: #ff3366;
+      --purple: #7048e8;
+      --mint: #00a989;
+      --blue: #1890ff;
+      --lime: #a0e040;
+      --cream: #fffdf7;
+      --card: #fff;
+      --ink: #1f2430;
+      --muted: #647087;
+      --line: #1f2430;
+      --shadow: 5px 5px 0 var(--ink);
+      --shadow-sm: 3px 3px 0 var(--ink);
+      --round: 16px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; overflow-x: hidden; color: var(--ink); background-color: var(--cream); background-image: radial-gradient(#e9e4d8 1px, transparent 1px); background-size: 24px 24px; font-family: "Noto Sans TC", sans-serif; line-height: 1.65; }
+    body, button, input { font-size: 16px; }
+    button, input { font-family: inherit; }
+    button { color: inherit; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .display, h1, h2, h3 { font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif; font-weight: 900; line-height: 1.25; }
+    .section { padding: 88px 0; }
+    .section-head { max-width: 720px; margin: 0 auto 38px; text-align: center; }
+    .kicker { display: inline-block; margin: 0 0 12px; padding: 4px 12px; border: 2px solid var(--ink); border-radius: 99px; background: var(--yellow); box-shadow: var(--shadow-sm); font-size: 12px; font-weight: 900; }
+    .section-head h2 { margin: 0; font-size: clamp(28px, 4vw, 42px); }
+    .section-head > p:last-child { margin: 12px 0 0; color: var(--muted); }
+    .btn { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px; border: 2px solid var(--ink); border-radius: 10px; background: var(--orange); box-shadow: var(--shadow-sm); font-weight: 900; transition: transform .16s ease, box-shadow .16s ease; }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+    .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+    .btn-yellow { background: var(--yellow); }
+    .btn-pink { background: var(--pink); color: white; }
+    .promo { padding: 7px 16px; border-bottom: 3px solid var(--ink); background: repeating-linear-gradient(135deg, #ffe97d 0 12px, #fff2ae 12px 24px); text-align: center; font-size: 13px; font-weight: 900; }
+    .promo strong { display: inline-block; margin-left: 7px; padding: 1px 9px; border-radius: 99px; color: #fff; background: var(--pink); }
+    .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 3px solid var(--ink); background: rgba(255,255,255,.96); box-shadow: 0 3px 0 rgba(31,36,48,.08); }
+    .nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; }
+    .brand-mark { display: grid; width: 43px; aspect-ratio: 1; place-items: center; border: 2px solid var(--ink); border-radius: 11px; background: var(--orange); box-shadow: var(--shadow-sm); font-size: 23px; transform: rotate(-3deg); }
+    .brand-name { display: grid; font-family: "Zen Maru Gothic", sans-serif; font-size: 17px; font-weight: 900; line-height: 1.2; }
+    .brand-name small { font-family: Fredoka, sans-serif; font-size: 10px; letter-spacing: 0; }
+    .nav-links { display: flex; align-items: center; gap: 5px; margin: 0; padding: 0; list-style: none; }
+    .nav-links a { display: block; padding: 8px 10px; border: 2px solid transparent; border-radius: 8px; font-size: 13px; font-weight: 900; white-space: nowrap; }
+    .nav-links a:hover { border-color: var(--ink); background: var(--yellow); box-shadow: 2px 2px 0 var(--ink); }
+    .nav-actions { display: flex; flex: 0 0 auto; gap: 9px; }
+    .nav-action { min-height: 40px; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 99px; background: var(--pink); box-shadow: 2px 2px 0 var(--ink); color: white; font-size: 13px; font-weight: 900; }
+    .nav-cart { background: var(--yellow); color: var(--ink); }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 2px solid var(--ink); border-radius: 8px; background: var(--yellow); font-size: 22px; font-weight: 900; }
+    .hero { position: relative; overflow: hidden; padding: 54px 0 58px; }
+    .hero::before { position: absolute; top: 10px; right: -75px; width: 270px; height: 270px; border: 3px dashed rgba(112,72,232,.3); border-radius: 50%; content: ""; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 42px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 17px; }
+    .hero-tags span { padding: 4px 10px; border: 2px solid var(--ink); border-radius: 99px; background: var(--lime); box-shadow: 2px 2px 0 var(--ink); font-size: 12px; font-weight: 900; transform: rotate(-2deg); }
+    .hero-tags span:nth-child(2) { background: #b9a8ff; transform: rotate(2deg); }
+    .hero h1 { max-width: 650px; margin: 0; font-size: clamp(38px, 5.3vw, 64px); }
+    .hero h1 mark { padding: 0 5px; color: inherit; background: linear-gradient(transparent 58%, var(--yellow) 58%); }
+    .hero h1 .pink-word { color: var(--pink); }
+    .hero-lede { max-width: 560px; margin: 18px 0 0; color: #424a5d; font-size: 16px; font-weight: 700; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 23px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 23px; padding-top: 15px; border-top: 2px dashed #b9b6aa; font-size: 12px; font-weight: 900; }
+    .hero-points span { display: inline-flex; align-items: center; gap: 6px; }
+    .point-icon { display: grid; width: 25px; aspect-ratio: 1; place-items: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); }
+    .hero-visual { position: relative; padding: 16px; border: 3px solid var(--ink); border-radius: 20px; background: #f5c073; box-shadow: 8px 8px 0 var(--ink); transform: rotate(1.2deg); }
+    .hero-visual img { width: min(400px, 100%); height: 300px; border: 2px solid var(--ink); border-radius: 12px; object-fit: cover; }
+    .hero-video { width: min(560px, 100%); aspect-ratio: 560 / 315; border: 2px solid var(--ink); border-radius: 12px; background: #1f2430; }
+    .hero-sticker { position: absolute; right: -19px; bottom: -21px; display: grid; width: 112px; aspect-ratio: 1; place-content: center; border: 3px solid var(--ink); border-radius: 50%; background: var(--yellow); box-shadow: var(--shadow-sm); text-align: center; transform: rotate(8deg); }
+    .hero-sticker b { font-family: Fredoka, sans-serif; font-size: 28px; line-height: 1; }
+    .hero-sticker small { font-size: 11px; font-weight: 900; }
+    .stats { border-block: 3px solid var(--ink); background: var(--purple); color: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding-block: 20px; }
+    .stat { padding: 6px 14px; border-right: 2px dashed rgba(255,255,255,.45); text-align: center; }
+    .stat:last-child { border: 0; }
+    .stat b { display: block; color: var(--yellow); font-family: Fredoka, sans-serif; font-size: 31px; line-height: 1.2; text-shadow: 2px 2px 0 var(--ink); }
+    .stat span { font-size: 13px; font-weight: 900; }
+    .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .compare-card { position: relative; padding: 27px; border: 3px solid var(--ink); border-radius: var(--round); background: #ffe9e8; box-shadow: var(--shadow); }
+    .compare-card.good { background: #e5f8cf; box-shadow: 7px 7px 0 var(--ink); }
+    .compare-card h3 { margin: 0 0 16px; font-size: 21px; }
+    .compare-card ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; font-weight: 700; }
+    .compare-card li::before { margin-right: 8px; content: "✦"; color: var(--pink); }
+    .compare-card.good li::before { color: var(--mint); }
+    .compare-label { position: absolute; top: -15px; right: 17px; padding: 2px 10px; border: 2px solid var(--ink); border-radius: 99px; background: var(--pink); color: #fff; font-size: 11px; font-weight: 900; transform: rotate(3deg); }
+    .compare-card.good .compare-label { background: var(--mint); transform: rotate(-3deg); }
+    .calculator { display: grid; grid-template-columns: 1fr .85fr; gap: 28px; margin-top: 32px; padding: 28px; border: 3px solid var(--ink); border-radius: var(--round); background: #fff; box-shadow: 7px 7px 0 var(--ink); }
+    .calculator h3 { margin: 0 0 16px; font-size: 22px; }
+    .range-row { margin: 16px 0 0; }
+    .range-row label { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 6px; font-weight: 900; }
+    .range-row output { color: var(--pink); font-family: Fredoka, sans-serif; }
+    input[type="range"] { width: 100%; accent-color: var(--orange); }
+    .calc-result { display: grid; align-content: center; justify-items: center; padding: 20px; border: 2px solid var(--ink); border-radius: 12px; background: linear-gradient(145deg, #ffe879, var(--yellow)); text-align: center; }
+    .calc-result span { font-weight: 900; }
+    .calc-result strong { color: var(--pink); font-family: Fredoka, sans-serif; font-size: clamp(35px, 5vw, 54px); line-height: 1.3; }
+    .calc-result p { margin: 2px 0 0; font-weight: 700; }
+    .products { border-block: 3px solid var(--ink); background: #fff4c9; }
+    .filter-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin: -7px 0 28px; }
+    .filter-btn { padding: 8px 14px; border: 2px solid var(--ink); border-radius: 99px; background: #fff; box-shadow: 2px 2px 0 var(--ink); font-size: 13px; font-weight: 900; }
+    .filter-btn.active, .filter-btn:hover { background: var(--orange); color: #fff; }
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .product-card { overflow: hidden; border: 3px solid var(--ink); border-radius: var(--round); background: #fff; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 7px 9px 0 var(--ink); }
+    .product-art { display: grid; height: 154px; place-items: center; border-bottom: 3px solid var(--ink); background: linear-gradient(145deg, #ffba68, #ff7446); }
+    .product-card:nth-child(2) .product-art { background: linear-gradient(145deg, #a99aff, #7454e8); }
+    .product-card:nth-child(3) .product-art { background: linear-gradient(145deg, #b7e96f, #61c58c); }
+    .product-card:nth-child(4) .product-art { background: linear-gradient(145deg, #ffd965, #f9a33a); }
+    .bag { display: grid; width: 98px; height: 115px; place-content: center; border: 3px solid var(--ink); border-radius: 12px 12px 19px 19px; background: #fff8df; box-shadow: 4px 4px 0 var(--ink); text-align: center; transform: rotate(-4deg); }
+    .bag span { font-size: 31px; line-height: 1.1; }
+    .bag b { max-width: 78px; font-size: 11px; line-height: 1.25; }
+    .product-info { padding: 16px; }
+    .product-tag { display: inline-block; padding: 2px 8px; border-radius: 99px; background: var(--yellow); font-size: 10px; font-weight: 900; }
+    .product-info h3 { min-height: 52px; margin: 9px 0 5px; font-size: 17px; line-height: 1.5; }
+    .product-info p { min-height: 70px; margin: 0; color: var(--muted); font-size: 12px; font-weight: 500; }
+    .product-buy { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 2px dashed #d8d4c7; }
+    .product-buy strong { font-family: Fredoka, sans-serif; font-size: 20px; white-space: nowrap; }
+    .product-buy .btn { min-height: 38px; padding: 5px 9px; font-size: 12px; }
+    .quiz-section { background: #e9e3ff; }
+    .quiz-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: start; }
+    .quiz-box, .streak-box { padding: 24px; border: 3px solid var(--ink); border-radius: var(--round); background: #fff; box-shadow: var(--shadow); }
+    .quiz-question { padding: 0 0 17px; border-bottom: 2px dashed #d4cde8; }
+    .quiz-question + .quiz-question { padding-top: 17px; }
+    .quiz-question h3 { margin: 0 0 10px; font-size: 16px; }
+    .options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .option { padding: 7px 10px; border: 2px solid var(--ink); border-radius: 8px; background: #fff; font-size: 12px; font-weight: 700; }
+    .option.selected { background: var(--yellow); box-shadow: 2px 2px 0 var(--ink); }
+    .quiz-controls { display: flex; align-items: center; gap: 13px; margin-top: 18px; }
+    .quiz-result { display: none; margin-top: 19px; padding: 17px; border: 2px solid var(--ink); border-radius: 12px; background: #fff4c9; }
+    .quiz-result.active { display: block; }
+    .quiz-result h3 { margin: 0 0 6px; }
+    .meter { height: 16px; overflow: hidden; border: 2px solid var(--ink); border-radius: 99px; background: #fff; }
+    .meter span { display: block; width: 0; height: 100%; background: var(--pink); transition: width .45s ease; }
+    .quiz-result p { margin: 9px 0 0; font-size: 13px; }
+    .streak-box { display: grid; justify-items: center; text-align: center; background: var(--pink); color: #fff; }
+    .streak-box h3 { margin: 0; color: #fff; font-size: 22px; }
+    .streak-number { margin: 4px 0; font-family: Fredoka, sans-serif; font-size: 68px; font-weight: 700; line-height: 1.1; text-shadow: 3px 3px 0 var(--ink); }
+    .streak-box p { margin: 4px 0 15px; font-size: 13px; font-weight: 700; }
+    .brew-layout { display: grid; grid-template-columns: 1fr .9fr; gap: 30px; align-items: center; }
+    .video-wrap { overflow: hidden; border: 3px solid var(--ink); border-radius: 14px; background: #1f2430; box-shadow: var(--shadow); }
+    .video-wrap iframe { display: block; width: 100%; aspect-ratio: 560 / 315; border: 0; }
+    .steps { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .step { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 14px; border: 2px solid var(--ink); border-radius: 12px; background: #fff; box-shadow: 3px 3px 0 var(--ink); }
+    .step-num { display: grid; width: 40px; aspect-ratio: 1; place-items: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); font-family: Fredoka, sans-serif; font-size: 20px; font-weight: 700; }
+    .step h3 { margin: 0; font-size: 15px; }
+    .step p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+    .timer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 14px 17px; border: 3px solid var(--ink); border-radius: 12px; background: var(--yellow); box-shadow: var(--shadow-sm); }
+    .timer strong { font-family: Fredoka, sans-serif; font-size: 32px; }
+    .timer-controls { display: flex; gap: 8px; }
+    .timer-controls .btn { min-height: 40px; padding: 6px 12px; font-size: 13px; }
+    .reviews { background: #e5f8ef; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review-card { padding: 22px; border: 3px solid var(--ink); border-radius: 14px; background: #fff; box-shadow: var(--shadow-sm); }
+    .stars { color: #e5a900; font-size: 18px; letter-spacing: 0; }
+    .review-card blockquote { min-height: 104px; margin: 12px 0; font-weight: 700; }
+    .review-card footer { padding-top: 11px; border-top: 2px dashed #d7d3c8; font-size: 12px; font-weight: 900; }
+    .review-card footer span { display: block; color: var(--muted); font-weight: 500; }
+    .discount { padding: 70px 0; border-block: 3px solid var(--ink); background: var(--orange); text-align: center; }
+    .discount h2 { max-width: 760px; margin: 0 auto; font-size: clamp(27px, 4vw, 40px); }
+    .discount p { max-width: 620px; margin: 12px auto 0; font-weight: 700; }
+    .discount-form { display: flex; max-width: 560px; gap: 9px; margin: 22px auto 0; }
+    .discount-form input { min-width: 0; flex: 1; padding: 12px 14px; border: 2px solid var(--ink); border-radius: 9px; background: #fff; }
+    .site-footer { padding: 48px 0 20px; background: var(--ink); color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 26px; }
+    .site-footer .brand-name small { color: var(--yellow); }
+    .footer-grid h3 { margin: 0 0 12px; color: var(--yellow); font-size: 14px; }
+    .footer-grid p, .footer-grid li { color: #e4e6eb; font-size: 12px; }
+    .footer-grid p { margin: 9px 0 0; }
+    .footer-grid ul { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
+    .footer-grid a:hover { color: var(--yellow); text-decoration: underline; }
+    .disclaimer { margin-top: 28px; padding-top: 15px; border-top: 1px solid #59606c; color: #c6cad2; font-size: 10px; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: #c6cad2; font-size: 10px; }
+    .overlay { position: fixed; z-index: 39; inset: 0; background: rgba(18,20,28,.55); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+    .overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; z-index: 40; top: 0; right: 0; display: flex; width: min(410px, 100vw); height: 100dvh; flex-direction: column; padding: 22px; border-left: 3px solid var(--ink); background: var(--cream); box-shadow: -7px 0 0 rgba(31,36,48,.22); transform: translateX(105%); transition: transform .24s ease; }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 15px; border-bottom: 2px solid var(--ink); }
+    .drawer-head h2 { margin: 0; font-size: 23px; }
+    .icon-btn { display: grid; width: 40px; aspect-ratio: 1; place-items: center; border: 2px solid var(--ink); border-radius: 8px; background: var(--yellow); font-size: 22px; font-weight: 900; }
+    .cart-list { display: grid; gap: 10px; overflow-y: auto; flex: 1; padding-block: 15px; }
+    .empty-cart { align-self: center; color: var(--muted); text-align: center; }
+    .cart-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px; border: 2px solid var(--ink); border-radius: 9px; background: #fff; }
+    .cart-item strong { display: block; font-size: 13px; }
+    .cart-item span { font-family: Fredoka, sans-serif; }
+    .remove-btn { border: 0; background: transparent; color: var(--pink); font-size: 12px; font-weight: 900; text-decoration: underline; }
+    .cart-total { display: flex; justify-content: space-between; margin-bottom: 12px; padding-top: 14px; border-top: 2px solid var(--ink); font-weight: 900; }
+    .drawer .btn { width: 100%; }
+    .toast { position: fixed; z-index: 60; right: 18px; bottom: 18px; max-width: min(380px, calc(100% - 36px)); padding: 12px 17px; border: 2px solid var(--ink); border-radius: 9px; background: var(--ink); box-shadow: 4px 4px 0 var(--yellow); color: #fff; font-weight: 700; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .2s ease, transform .2s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1050px) {
+      .nav-links { gap: 0; }
+      .nav-links a { padding-inline: 7px; font-size: 12px; }
+      .nav-action { padding-inline: 9px; font-size: 12px; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .nav { position: relative; }
+      .menu-toggle { display: block; order: 3; }
+      .nav-links { position: absolute; top: calc(100% + 3px); left: -20px; right: -20px; display: none; align-items: stretch; padding: 10px 20px 16px; border-bottom: 3px solid var(--ink); background: #fff; box-shadow: 0 5px 0 rgba(31,36,48,.12); }
+      .nav-links.open { display: grid; }
+      .nav-links a { font-size: 14px; }
+      .nav-actions { margin-left: auto; }
+      .hero-grid { grid-template-columns: 1fr .85fr; gap: 26px; }
+      .hero-visual img { height: 300px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .container { width: calc(100% - 32px); }
+      .section { padding: 66px 0; }
+      .promo { font-size: 11px; }
+      .nav { display: grid; min-height: 64px; grid-template-columns: 1fr auto; gap: 8px; padding-block: 8px; }
+      .nav-links { right: 0; left: 0; }
+      .brand-mark { width: 37px; font-size: 20px; }
+      .brand-name { font-size: 14px; }
+      .nav-actions { grid-column: 1 / -1; grid-row: 2; justify-content: center; gap: 8px; margin: 0; padding-bottom: 3px; }
+      .nav-action { min-height: 36px; padding: 5px 8px; font-size: 11px; }
+      .menu-toggle { grid-column: 2; grid-row: 1; width: 38px; height: 38px; order: 0; }
+      .hero { padding: 40px 0 48px; }
+      .hero-grid, .compare-grid, .calculator, .quiz-layout, .brew-layout { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(36px, 11vw, 50px); }
+      .hero-lede { font-size: 14px; }
+      .hero-visual { width: calc(100% - 8px); margin: 4px 0 8px; }
+      .hero-video { width: 100%; }
+      .hero-visual img { height: clamp(210px, 62vw, 300px); }
+      .hero-sticker { right: -11px; width: 90px; }
+      .hero-sticker b { font-size: 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); padding-block: 12px; }
+      .stat { padding: 9px 4px; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 2px dashed rgba(255,255,255,.45); }
+      .stat b { font-size: 27px; }
+      .compare-card { padding: 23px 18px; }
+      .calculator { padding: 20px; }
+      .product-grid, .review-grid { grid-template-columns: 1fr; }
+      .product-info h3, .product-info p { min-height: 0; }
+      .quiz-box, .streak-box { padding: 18px; }
+      .quiz-controls { align-items: flex-start; flex-direction: column; }
+      .timer { align-items: flex-start; flex-direction: column; }
+      .discount { padding: 58px 0; }
+      .discount-form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 25px 16px; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+      .drawer { padding: 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
-  <div class="promo-bar">🎉 新會員咖啡優惠開跑！立即解鎖學生 85 折，滿額再享免運　<a href="#student">馬上領取 →</a></div><header class="site-header"><nav class="container nav" aria-label="主要導覽"><a class="brand" href="#hero" aria-label="新民咖啡首頁"><span class="brand-mark">☕</span><span><span class="brand-name">新民咖啡</span><small>XINMIN COFFEE</small></span></a><button class="icon-button menu-toggle" id="menuToggle" aria-label="開啟導覽選單" aria-expanded="false">☰</button><ul class="nav-menu" id="navMenu"><li><a href="#why-brew">為什麼喝</a></li><li><a href="#products">咖啡商品</a></li><li><a href="#addict-quiz">上癮測驗</a></li><li><a href="#brew-guide">手沖教學</a></li><li><a href="#reviews">學生評價</a></li></ul><div class="nav-actions"><a class="btn small discount-link" href="#student">學生 85 折</a><button class="btn small cart-button" id="openCart" aria-label="開啟購物車">🛒 購物車 <span class="count" id="cartCount">0</span>　連續 <span id="navStreakCount">0</span> 天</button></div></nav></header>
+  <div class="promo">學生荷包急救中：指定沖泡豆款超值優惠 <strong>單筆滿 $399 免運</strong></div>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="新民咖啡首頁"><span class="brand-mark" aria-hidden="true">☕</span><span class="brand-name">新民咖啡<small>XINMIN COFFEE</small></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#why-brew">怎麼沖泡</a></li><li><a href="#products">平價豆專區</a></li><li><a href="#addict-quiz">上癮測驗</a></li><li><a href="#brew-guide">宿舍沖泡法</a></li><li><a href="#reviews">學生評價</a></li>
+      </ul>
+      <div class="nav-actions"><button class="nav-action" type="button" id="navCheckin">🔥 今日續命 <span id="navStreakCount">0</span></button><button class="nav-action nav-cart" type="button" id="cartOpen">🛒 購物籃 <span id="cartCount">0</span></button></div>
+      <button class="menu-toggle" type="button" id="menuToggle" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
+    </nav>
+  </header>
   <main>
-    <section class="hero" id="hero"><div class="container hero-grid"><div><span class="pill">🎓 學生的日常咖啡補給站</span><h1>忙裡偷閒，<br>來杯咖啡找回<span><em>專注力</em></span></h1><p class="hero-lede">讀書、趕報告、準備考試，也別忘了照顧自己。新民咖啡用實在價格、好喝品質，陪你每天清醒一點、放鬆一點。</p><div class="hero-actions"><a class="btn" href="#products">逛逛人氣商品 <span>→</span></a><a class="btn secondary" href="#addict-quiz">測測咖啡因指數</a></div><div class="hero-badge">✨ 新鮮烘焙　·　學生友善價格　·　滿額免運</div></div><div class="hero-art" aria-label="新民咖啡手繪咖啡袋插畫"><span class="spark one">✦</span><span class="spark two">✿</span><div class="hero-note">今日好心情<br>從一杯開始！</div><div class="coffee-bag"><span class="bag-cup">☕</span><strong>新民咖啡</strong><small>GOOD COFFEE, GOOD DAY</small></div></div></div></section>
-    <section class="stats"><div class="container stats-grid"><div class="stat"><strong>NT$ 9.9</strong><span>每日咖啡最低價</span></div><div class="stat"><strong>85 折</strong><span>學生專屬優惠</span></div><div class="stat"><strong>100%</strong><span>新鮮烘焙好品質</span></div><div class="stat"><strong>☕ 續杯</strong><span>替努力的你加油</span></div></div></section>
-    <section class="section" id="why-brew"><div class="container why-grid"><div class="why-copy"><p class="eyebrow">WHY XINMIN COFFEE</p><h2>咖啡不必很貴，<br>日常也能很講究</h2><p>從一杯方便好喝的即溶咖啡，到適合慢慢沖煮的咖啡豆，為不同生活步調準備剛剛好的選擇。好咖啡的 CP 值，讓你天天享受也不心疼。</p><div class="benefits"><div class="benefit"><b>🌱 新鮮烘焙</b><span>保留咖啡豆的香氣</span></div><div class="benefit"><b>💸 學生友善</b><span>小資也能安心喝</span></div><div class="benefit"><b>📦 輕鬆補貨</b><span>多種品項一次買齊</span></div><div class="benefit"><b>💛 用心挑選</b><span>好喝與價格都顧到</span></div></div></div><div class="savings-card"><p class="eyebrow">YOUR COFFEE SAVINGS</p><h3>喝咖啡，也能聰明省</h3><p class="muted">調整你的每日習慣，看看一年可以省下多少。</p><div class="slider-row"><label class="slider-label" for="cupsInput"><span>每天喝幾杯</span><strong><span id="cupsVal">2</span> 杯</strong></label><input id="cupsInput" type="range" min="1" max="5" value="2"></div><div class="slider-row"><label class="slider-label" for="priceInput"><span>每杯咖啡預算</span><strong>NT$ <span id="priceVal">55</span></strong></label><input id="priceInput" type="range" min="35" max="150" step="5" value="55"></div><div class="savings-result"><span class="big">$<span id="savingsYear">27,375</span></span><p>改喝新民咖啡，每年最高可省<br><strong id="savingsDesc">每天 2 杯，每杯省下 NT$45！</strong></p></div></div></div></section>
-    <section class="section products-section" id="products"><div class="container"><div class="section-head"><div><p class="eyebrow">GOOD COFFEE, GOOD PRICE</p><h2>咖啡商品補給站</h2></div><p>從香醇即溶到方便濾掛，找到適合你的那一杯。學生與小資族都能輕鬆入手。</p></div><div class="filters" role="group" aria-label="篩選咖啡商品"><button class="filter-btn active" data-filter="all">全部商品</button><button class="filter-btn" data-filter="dark">濃郁即溶</button><button class="filter-btn" data-filter="filter">濾掛咖啡</button><button class="filter-btn" data-filter="bulk">學生組合</button></div><div class="product-grid" id="productGrid">
-      <article class="product-card" data-category="dark"><div class="product-visual">☕</div><div class="product-body"><div class="product-meta"><span class="pill">人氣熱銷</span><span>⭐ 4.9</span></div><h3>香醇即溶黑咖啡</h3><p>濃厚順口、隨沖即飲，考前熬夜與早八精神補給好夥伴。</p><div class="product-bottom"><span class="price">NT$189</span><button class="btn small" onclick="addToCart('香醇即溶黑咖啡',189)">加入購物車</button></div></div></article>
-      <article class="product-card" data-category="dark"><div class="product-visual">🥛</div><div class="product-body"><div class="product-meta"><span class="pill">人氣推薦</span><span>⭐ 4.8</span></div><h3>拿鐵風味即溶咖啡</h3><p>奶香柔順、苦甜平衡，在宿舍也能快速享受一杯拿鐵。</p><div class="product-bottom"><span class="price">NT$169</span><button class="btn small" onclick="addToCart('拿鐵風味即溶咖啡',169)">加入購物車</button></div></div></article>
-      <article class="product-card" data-category="filter"><div class="product-visual">🫖</div><div class="product-body"><div class="product-meta"><span class="pill">單杯方便</span><span>⭐ 4.9</span></div><h3>濾掛咖啡 10 入組</h3><p>撕開掛杯、注水就能喝，宿舍與圖書館都方便沖煮。</p><div class="product-bottom"><span class="price">NT$99</span><button class="btn small" onclick="addToCart('濾掛咖啡 10 入組',99)">加入購物車</button></div></div></article>
-      <article class="product-card" data-category="bulk"><div class="product-visual">🎁</div><div class="product-body"><div class="product-meta"><span class="pill">組合最划算</span><span>⭐ 5.0</span></div><h3>學生必備補給箱</h3><p>即溶與濾掛一次備齊，揪室友一起買，日常補貨更划算。</p><div class="product-bottom"><span class="price">NT$449</span><button class="btn small" onclick="addToCart('學生必備補給箱',449)">加入購物車</button></div></div></article>
-    </div></div></section>
-    <section class="section quiz-section" id="addict-quiz"><div class="container quiz-wrap"><div class="quiz-intro"><p class="eyebrow">COFFEE CHECK-IN</p><h2>你的咖啡因<br>上癮指數是多少？</h2><p>回答三個小問題，看看咖啡是不是已經成為你的每日必需品。</p><div class="streak-box"><p>🔥 今日咖啡打卡<br><strong>連續 <span id="streakDisplay">0</span> 天</strong><br><small id="streakHint">今天還沒打卡，來杯咖啡吧！</small></p><button class="btn small" onclick="triggerStreakCheckin()">☕ 今日打卡</button></div></div><div class="quiz-card"><div class="question" data-question="1"><h3>1. 你一天通常喝幾杯咖啡？</h3><div class="options"><button class="option" onclick="selectOption(this,1,10)">0–1 杯</button><button class="option" onclick="selectOption(this,1,25)">2 杯</button><button class="option" onclick="selectOption(this,1,35)">3 杯</button><button class="option" onclick="selectOption(this,1,40)">4 杯以上</button></div></div><div class="question" data-question="2"><h3>2. 一週有幾天會喝咖啡？</h3><div class="options"><button class="option" onclick="selectOption(this,2,10)">1–2 天</button><button class="option" onclick="selectOption(this,2,20)">3–4 天</button><button class="option" onclick="selectOption(this,2,30)">5–6 天</button><button class="option" onclick="selectOption(this,2,40)">每天都喝</button></div></div><div class="question" data-question="3"><h3>3. 沒喝咖啡時，你的精神狀態？</h3><div class="options"><button class="option" onclick="selectOption(this,3,5)">完全沒差</button><button class="option" onclick="selectOption(this,3,15)">有一點睏</button><button class="option" onclick="selectOption(this,3,25)">精神不太好</button><button class="option" onclick="selectOption(this,3,30)">沒咖啡不行</button></div></div><button class="btn pink" onclick="calculateQuizScore()">看我的測驗結果 →</button><div class="quiz-result" id="quizResultBox" aria-live="polite"><strong id="quizPercent">0%</strong><h3 id="quizLevel"></h3><p id="quizAdvice"></p><a class="btn small" href="#products">看看適合你的咖啡</a></div></div></div></section>
-    <section class="section" id="brew-guide"><div class="container brew-grid"><div><p class="eyebrow">BREW A BETTER BREAK</p><h2>三步驟手沖教學</h2><p class="muted">給自己一點慢下來的時間，簡單器具也能沖出一杯香氣滿滿的咖啡。</p><div class="steps"><div class="step"><span class="step-no">01</span><div><h3>研磨與準備</h3><p>取 15g 咖啡豆，磨至中細刻度，準備濾杯與濾紙。</p></div></div><div class="step"><span class="step-no">02</span><div><h3>注水悶蒸</h3><p>以約 92°C 熱水均勻潤濕咖啡粉，悶蒸 20 秒。</p></div></div><div class="step"><span class="step-no">03</span><div><h3>分段注水</h3><p>以畫圈方式注入 180–200ml 熱水，享受香氣慢慢散開。</p></div></div></div><div class="timer"><div><small class="muted">手沖計時器</small><div class="timer-display" id="timerDisplay">01:30</div></div><div class="timer-actions"><button class="btn small" id="timerToggle" onclick="toggleTimer()">開始</button><button class="btn small secondary" onclick="resetTimer()">重設</button></div></div></div><div class="video-wrap"><iframe src="https://www.youtube.com/embed/hMOYa4EBntI" title="新民咖啡手沖教學影片" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></section>
-    <section class="section reviews-section" id="reviews"><div class="container"><div class="section-head"><div><p class="eyebrow">STUDENT STORIES</p><h2>學生都怎麼說？</h2></div><p>讀書、報告、社團活動的每一天，都有一杯咖啡陪伴。</p></div><div class="reviews-grid"><article class="review"><div class="stars">★★★★★</div><blockquote>「濾掛放在宿舍超方便，早八上課前幾分鐘就能準備好！」</blockquote><footer>林同學・大學生　｜　使用 8 個月</footer></article><article class="review"><div class="stars">★★★★★</div><blockquote>「即溶咖啡價格很友善，期末考前囤幾盒，讀書更有儀式感。」</blockquote><footer>陳同學・研究生　｜　使用 1 年</footer></article><article class="review"><div class="stars">★★★★★</div><blockquote>「口味選擇很多，和室友一起買組合很划算，回購好幾次了。」</blockquote><footer>張同學・大學生　｜　使用 5 個月</footer></article></div></div></section>
-    <section class="student-section" id="student"><div class="container student-box"><div><p class="eyebrow">STUDENT PERK</p><div class="discount">學生專屬 85 折！</div><h2>讓好咖啡更靠近你的生活</h2><p>輸入學校信箱即可查看學生優惠資訊。將寄送優惠代碼說明，讓你每次補貨都更省。</p></div><form class="student-form" onsubmit="handleStudentDiscount(event)"><input id="studentEmail" type="email" required placeholder="輸入你的 .edu.tw 學校信箱" aria-label="學校信箱"><button class="btn" type="submit">領取學生優惠 →</button></form></div></section>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-tags"><span>早八救援隊</span><span>學生口袋價</span><span>宿舍也能沖</span></div>
+          <h1>低階豆，<mark>高享受</mark><br>今天也要<span class="pink-word">醒著</span>！</h1>
+          <p class="hero-lede">不必為一杯咖啡花掉半份午餐錢。新民咖啡用簡單好沖、價格實在的咖啡豆，陪你從早八一路走到期中週。</p>
+          <div class="hero-actions"><a class="btn" href="#products">馬上挑選平價豆 <span aria-hidden="true">↓</span></a><a class="btn btn-yellow" href="#addict-quiz">測測咖啡日常指數</a></div>
+          <div class="hero-points"><span><i class="point-icon" aria-hidden="true">$</i>學生預算友善</span><span><i class="point-icon" aria-hidden="true">♨</i>熱水就能沖</span><span><i class="point-icon" aria-hidden="true">豆</i>大容量選擇</span></div>
+        </div>
+        <div class="hero-media"><div class="hero-visual"><img src="images/hero.jpg" width="400" height="300" alt="新民咖啡主視覺：咖啡與沖泡日常"><div class="hero-sticker" aria-label="每杯約十元起"><b>$10</b><small>每杯自沖約</small></div></div><iframe class="hero-video" src="https://www.youtube-nocookie.com/embed/hMOYa4EBntI" title="新民咖啡沖泡介紹影片" width="560" height="315" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+    </section>
+    <div class="stats" aria-label="新民咖啡特色數據"><div class="container stats-grid"><div class="stat"><b>約 $10</b><span>每杯自沖參考成本</span></div><div class="stat"><b>3 min</b><span>宿舍簡單沖泡</span></div><div class="stat"><b>4 款</b><span>學生人氣咖啡選擇</span></div><div class="stat"><b>85 折</b><span>學生信箱優惠</span></div></div></div>
+    <section class="section" id="why-brew">
+      <div class="container">
+        <header class="section-head"><p class="kicker">WHY BREW AT HOME</p><h2>自己沖一杯，荷包多喘口氣</h2><p>省下的每一筆，都可以變成下一餐或下一本參考書。</p></header>
+        <div class="compare-grid">
+          <article class="compare-card"><span class="compare-label">常常外帶</span><h3>🥲 荷包大失血模式</h3><ul><li>每天外帶一杯，單價累積很有感</li><li>趕上課還得排隊等候</li><li>加料、升級尺寸，帳單又多一筆</li></ul></article>
+          <article class="compare-card good"><span class="compare-label">宿舍自沖</span><h3>😎 學生省錢模式</h3><ul><li>咖啡粉、濾掛都能依預算挑選</li><li>在房間、圖書館都能安排一杯</li><li>不需要昂貴設備，馬克杯加飲水機熱水就能完成</li></ul></article>
+        </div>
+        <div class="calculator">
+          <div><h3>🧮 算算你的年度咖啡預算</h3><div class="range-row"><label for="cupsInput">每天外購杯數 <output id="cupsVal">2 杯</output></label><input id="cupsInput" type="range" min="1" max="5" value="2" aria-label="每天外購咖啡杯數"></div><div class="range-row"><label for="priceInput">每杯外購價格 <output id="priceVal">$55</output></label><input id="priceInput" type="range" min="35" max="150" step="5" value="55" aria-label="每杯外購咖啡價格"></div><p style="margin:12px 0 0;color:var(--muted);font-size:12px">以自沖每杯約 $10、全年 365 天估算，實際花費依豆款與飲用習慣而異。</p></div>
+          <div class="calc-result" aria-live="polite"><span>一年估計可省下</span><strong id="savingsYear">$32,850</strong><p id="savingsDesc">把省下的預算留給更想要的事！</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section products" id="products">
+      <div class="container">
+        <header class="section-head"><p class="kicker">STUDENT COFFEE CLUB</p><h2>平價低階豆專區</h2><p>不炒作產區故事，專心挑好沖、價格實在的日常咖啡。</p></header>
+        <div class="filter-row" role="group" aria-label="篩選咖啡商品"><button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">全部推薦豆款</button><button class="filter-btn" type="button" data-filter="dark" aria-pressed="false">重焙抗睡魔</button><button class="filter-btn" type="button" data-filter="filter" aria-pressed="false">吃土濾掛組</button><button class="filter-btn" type="button" data-filter="bulk" aria-pressed="false">大容量學霸包</button></div>
+        <div class="product-grid">
+          <article class="product-card" data-category="dark"><div class="product-art"><div class="bag"><span aria-hidden="true">☕</span><b>EARLY BIRD<br>DARK ROAST</b></div></div><div class="product-info"><span class="product-tag">重焙・熱銷</span><h3>早八不昏睡・超狂深焙豆</h3><p>羅布斯塔與阿拉比卡混豆，直火深焙帶出苦甜可可風味。</p><div class="product-buy"><strong>NT$189</strong><button class="btn" type="button" data-add="早八不昏睡・超狂深焙豆" data-price="189">加入購物籃</button></div></div></article>
+          <article class="product-card" data-category="dark"><div class="product-art"><div class="bag"><span aria-hidden="true">🌙</span><b>ALL NIGHT<br>BLEND</b></div></div><div class="product-info"><span class="product-tag">重焙・濃郁</span><h3>期中歐趴・通宵特調豆</h3><p>耐萃取配方，回沖仍有風味，適合需要長時間讀書的夜晚。</p><div class="product-buy"><strong>NT$169</strong><button class="btn" type="button" data-add="期中歐趴・通宵特調豆" data-price="169">加入購物籃</button></div></div></article>
+          <article class="product-card" data-category="filter"><div class="product-art"><div class="bag"><span aria-hidden="true">🫖</span><b>POCKET<br>DRIP BAG</b></div></div><div class="product-info"><span class="product-tag">濾掛・輕鬆沖</span><h3>月底吃土・小資鮮磨濾掛組</h3><p>單包約 $9.9，撕開掛杯、加入熱水，免磨豆也能輕鬆享用。</p><div class="product-buy"><strong>NT$99</strong><button class="btn" type="button" data-add="月底吃土・小資鮮磨濾掛組" data-price="99">加入購物籃</button></div></div></article>
+          <article class="product-card" data-category="bulk"><div class="product-art"><div class="bag"><span aria-hidden="true">📦</span><b>STUDY<br>SHARE BOX</b></div></div><div class="product-info"><span class="product-tag">大容量・分享</span><h3>寢室囤貨・3 磅學霸大分享箱</h3><p>適合室友或讀書小組一起分，單杯成本更好安排。</p><div class="product-buy"><strong>NT$449</strong><button class="btn" type="button" data-add="寢室囤貨・3 磅學霸大分享箱" data-price="449">加入購物籃</button></div></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section quiz-section" id="addict-quiz">
+      <div class="container">
+        <header class="section-head"><p class="kicker">COFFEE ROUTINE LAB</p><h2>咖啡日常實驗室：測測你的續航指數！</h2><p>期中週情境小測驗，結果僅供趣味參考，不是健康診斷。</p></header>
+        <div class="quiz-layout">
+          <div class="quiz-box">
+            <div class="quiz-question" data-question="1"><h3>01｜現在的精神狀態比較像？</h3><div class="options"><button class="option" type="button" data-score="10">精神不錯</button><button class="option" type="button" data-score="25">有點想睡</button><button class="option" type="button" data-score="35">眼神放空</button><button class="option" type="button" data-score="40">急需休息</button></div></div>
+            <div class="quiz-question" data-question="2"><h3>02｜作業期限距離現在？</h3><div class="options"><button class="option" type="button" data-score="10">還有一週</button><button class="option" type="button" data-score="20">剩幾天</button><button class="option" type="button" data-score="30">明天截止</button><button class="option" type="button" data-score="40">正在倒數</button></div></div>
+            <div class="quiz-question" data-question="3"><h3>03｜今天的安排有留休息時間嗎？</h3><div class="options"><button class="option" type="button" data-score="5">有，會休息</button><button class="option" type="button" data-score="15">盡量安排</button><button class="option" type="button" data-score="25">行程很滿</button><button class="option" type="button" data-score="30">還沒想到</button></div></div>
+            <div class="quiz-controls"><button class="btn btn-yellow" type="button" id="quizSubmit">看看我的指數</button><span style="color:var(--muted);font-size:12px">記得適時休息、補充水分。</span></div>
+            <div class="quiz-result" id="quizResultBox" aria-live="polite"><h3 id="quizResultTitle">結果</h3><div class="meter"><span id="quizMeter"></span></div><p id="quizResultText"></p></div>
+          </div>
+          <aside class="streak-box"><h3>今日續命打卡機</h3><div class="streak-number" id="streakDisplay">0</div><p>今天也為自己的努力留個記號<br>咖啡不是休息的替代品喔！</p><button class="btn btn-yellow" type="button" id="checkinButton">完成今日打卡</button><p id="checkinMessage" aria-live="polite">今天尚未打卡</p></aside>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="brew-guide">
+      <div class="container">
+        <header class="section-head"><p class="kicker">DORM ROOM BREW GUIDE</p><h2>宿舍零門檻：熱水即沖教學</h2><p>不需要昂貴設備，馬克杯加飲水機熱水就能完成。</p></header>
+        <div class="brew-layout">
+          <div class="video-wrap"><iframe width="560" height="315" src="https://www.youtube.com/embed/hMOYa4EBntI" title="新民咖啡沖泡教學影片" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div><ol class="steps"><li class="step"><span class="step-num">1</span><div><h3>掛上濾掛包</h3><p>把濾掛包架在馬克杯上；若使用咖啡粉，取約 15g 放入濾杯。</p></div></li><li class="step"><span class="step-num">2</span><div><h3>熱水浸潤，稍等悶蒸</h3><p>先少量注水浸濕咖啡粉，等待約 20 秒讓粉層均勻吸水。</p></div></li><li class="step"><span class="step-num">3</span><div><h3>分次注水，完成出杯</h3><p>緩慢注入約 180–200ml 熱水，依喜好調整濃淡。</p></div></li></ol><div class="timer"><div><span style="display:block;font-size:11px;font-weight:900">沖泡計時器</span><strong id="timerDisplay" aria-live="polite">01:30</strong></div><div class="timer-controls"><button class="btn" type="button" id="timerToggle">開始</button><button class="btn btn-yellow" type="button" id="timerReset">重設</button></div></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section reviews" id="reviews">
+      <div class="container"><header class="section-head"><p class="kicker">CAMPUS NOTES</p><h2>學生咖啡日常：喝過的人怎麼說？</h2><p>來自不同科系的真實讀書日常分享。</p></header>
+        <div class="review-grid"><article class="review-card"><div class="stars" aria-label="5 星">★★★★★</div><blockquote>「早上在宿舍沖好再去上課，少了排隊，書包也能多放一點講義。」</blockquote><footer>陳同學・資工系大三<span>咖啡日常 8 個月</span></footer></article><article class="review-card"><div class="stars" aria-label="5 星">★★★★★</div><blockquote>「濾掛放工作室很方便，趕模型的時候不用特地跑出去買飲料。」</blockquote><footer>林同學・建築系大四<span>咖啡日常 1 年</span></footer></article><article class="review-card"><div class="stars" aria-label="5 星">★★★★★</div><blockquote>「跟室友一起買大包裝比較划算，沖泡步驟也不麻煩，味道很有存在感。」</blockquote><footer>張同學・醫學系大二<span>咖啡日常 5 個月</span></footer></article></div>
+      </div>
+    </section>
+    <section class="discount" id="student-discount"><div class="container"><p class="kicker">STUDENT EXCLUSIVE</p><h2>輸入學校信箱，即享學生專屬 85 折！</h2><p>讀書、考試都辛苦了，讓日常咖啡預算稍微輕鬆一點。請使用有效的電子郵件格式。</p><form class="discount-form" id="discountForm"><input id="studentEmail" type="email" placeholder="name@school.edu.tw" aria-label="學生電子郵件" required><button class="btn btn-yellow" type="submit">領取學生優惠</button></form></div></section>
   </main>
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="#hero"><span class="brand-mark">☕</span><span><span class="brand-name">新民咖啡</span><small>XINMIN COFFEE</small></span></a><p class="muted" style="color:#c7c9d0;margin-top:14px">陪你在忙碌日常中，找到一杯剛剛好的咖啡。</p></div><div><p class="footer-title">網站導覽</p><div class="footer-links"><a href="#why-brew">為什麼喝咖啡</a><a href="#products">咖啡商品</a><a href="#addict-quiz">上癮指數測驗</a><a href="#brew-guide">手沖教學</a><a href="#reviews">學生評價</a></div></div><div><p class="footer-title">學生服務</p><div class="footer-links"><a href="#student">學生 85 折優惠</a><a href="#products">運費與訂購說明</a><a href="#hero">回到頁首 ↑</a></div></div><div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:student@xinmin-coffee.tw">student@xinmin-coffee.tw</a><a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E7%BE%85%E6%96%AF%E7%A6%8F%E8%B7%AF100%E8%99%9F" target="_blank" rel="noopener">台北市大安區羅斯福路 100 號 ↗</a><span>服務時間｜週一至週五 10:00–18:00</span></div></div></div><div class="footer-bottom"><span>© 2026 Xinmin Coffee. All rights reserved.</span><span>新鮮烘焙・用心挑選・學生友善</span></div></div></footer>
-  <div class="overlay" id="cartOverlay" onclick="toggleCartDrawer(false)"></div><aside class="cart-drawer" id="cartDrawer" aria-label="購物車"><div class="drawer-head"><h2>🛒 我的購物車</h2><button class="icon-button" aria-label="關閉購物車" onclick="toggleCartDrawer(false)">✕</button></div><div class="cart-list" id="cartItemList"></div><div class="cart-total"><div><span>合計</span><span id="cartTotalText">NT$0</span></div><button class="btn" onclick="checkoutCart()">前往結帳</button></div></aside><div class="toast" id="toastBox" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="#hero"><span class="brand-mark" aria-hidden="true">☕</span><span class="brand-name">新民咖啡<small>XINMIN COFFEE</small></span></a><p>學生預算也能享受簡單沖泡的日常咖啡，忙碌時別忘了好好休息。</p></div><div><h3>咖啡專區</h3><ul><li><a href="#why-brew">為什麼自己沖</a></li><li><a href="#products">平價咖啡商品</a></li><li><a href="#addict-quiz">咖啡日常測驗</a></li></ul></div><div><h3>學生服務</h3><ul><li><a href="#brew-guide">宿舍沖泡教學</a></li><li><a href="#reviews">學生評價</a></li><li><a href="#student-discount">學生信箱優惠</a></li></ul></div><div><h3>聯絡資訊</h3><ul><li>服務時間：週一至週五 10:00–18:00</li><li>出貨時間：下單後 2–3 個工作日</li><li><a href="mailto:student@xinmin-coffee.tw">student@xinmin-coffee.tw</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=僑光科技大學" target="_blank" rel="noopener noreferrer">台中市西屯區僑光路100號</a></li></ul></div></div><p class="disclaimer">本頁購物籃、結帳與學生優惠為前端展示流程，不提供實際交易或學籍驗證。咖啡因攝取請依個人狀況適量安排。</p><div class="footer-bottom"><span>© 2026 Xinmin Coffee｜新民咖啡</span><span>學生預算友善・宿舍簡單沖泡</span></div></div></footer>
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="購物籃" aria-hidden="true"><div class="drawer-head"><h2>🛒 我的購物籃</h2><button class="icon-btn" type="button" id="cartClose" aria-label="關閉購物籃">×</button></div><div class="cart-list" id="cartItemList"><p class="empty-cart">購物籃還沒有商品，去挑一款喜歡的咖啡吧！</p></div><div class="cart-total"><span>合計</span><span id="cartTotalText">NT$0</span></div><button class="btn btn-yellow" type="button" id="checkoutButton">前往結帳</button></aside>
+  <div class="toast" id="toastBox" role="status" aria-live="polite"></div>
   <script>
-    const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);let toastTimer,cartItems=[],timerInterval=null,timerSeconds=90,quizAnswers={1:null,2:null,3:null},streak=0;
-    function toast(msg){const box=$('#toastBox');box.textContent=msg;box.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>box.classList.remove('show'),2500)}
-    function calculateSavings(){const cups=Number($('#cupsInput').value),price=Number($('#priceInput').value),year=Math.max(0,Math.round((price-10)*cups*365));$('#cupsVal').textContent=cups;$('#priceVal').textContent=price;$('#savingsYear').textContent=year.toLocaleString('zh-TW');$('#savingsDesc').textContent=`每天 ${cups} 杯，每杯省下 NT$${price-10}！`}
-    $('#cupsInput').addEventListener('input',calculateSavings);$('#priceInput').addEventListener('input',calculateSavings);calculateSavings();
-    $$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>filterProducts(btn.dataset.filter)));
-    function filterProducts(category){$$('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===category));$$('.product-card').forEach(card=>card.hidden=category!=='all'&&card.dataset.category!==category)}
-    function selectOption(btn,qNum,score){const group=btn.closest('.question');group.querySelectorAll('.option').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');quizAnswers[qNum]=score;$('#quizResultBox').classList.remove('active')}
-    function calculateQuizScore(){if(Object.values(quizAnswers).some(v=>v===null)){toast('請先回答三個問題，再查看測驗結果！');return}const score=Object.values(quizAnswers).reduce((a,b)=>a+b,0),percent=Math.min(99,Math.round(score/110*100));let level,advice;if(percent>=80){level='咖啡是你的最佳戰友！';advice='記得適量飲用、補充水分，也可以用一杯好咖啡陪你保持專注。'}else if(percent>=50){level='你和咖啡是好朋友';advice='咖啡已融入日常，選擇品質好、價格實在的咖啡，享受每一杯。'}else{level='輕鬆享受派';advice='你與咖啡保持剛剛好的距離，想提振精神時再來一杯就好。'}$('#quizPercent').textContent=percent+'%';$('#quizLevel').textContent=level;$('#quizAdvice').textContent=advice;$('#quizResultBox').classList.add('active')}
-    function triggerStreakCheckin(){if(streak){toast('今天已經打卡囉，明天再來續杯！');return}streak++;$('#streakDisplay').textContent=streak;$('#navStreakCount').textContent=streak;$('#streakHint').textContent='打卡成功！明天再回來續杯。';toast('今日咖啡打卡成功 ☕')}
-    function formatTime(secs){return `${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`}
-    function toggleTimer(){if(timerInterval){clearInterval(timerInterval);timerInterval=null;$('#timerToggle').textContent='繼續';return}if(timerSeconds<=0){toast('請先重設計時器再開始！');return}$('#timerToggle').textContent='暫停';timerInterval=setInterval(()=>{timerSeconds--;$('#timerDisplay').textContent=formatTime(timerSeconds);if(timerSeconds<=0){clearInterval(timerInterval);timerInterval=null;$('#timerToggle').textContent='開始';toast('手沖時間到，享受你的咖啡！')}},1000)}
-    function resetTimer(){clearInterval(timerInterval);timerInterval=null;timerSeconds=90;$('#timerDisplay').textContent='01:30';$('#timerToggle').textContent='開始';toast('計時器已重設為 90 秒')}
-    function addToCart(title,price){const item=cartItems.find(x=>x.title===title);if(item)item.qty++;else cartItems.push({title,price,qty:1});updateCartUI();toast(`已將「${title}」加入購物車`)}
-    function updateCartUI(){const count=cartItems.reduce((n,x)=>n+x.qty,0),total=cartItems.reduce((n,x)=>n+x.price*x.qty,0);$('#cartCount').textContent=count;$('#cartTotalText').textContent='NT$'+total.toLocaleString('zh-TW');$('#cartItemList').innerHTML=cartItems.length?cartItems.map((x,i)=>`<div class="cart-item"><div><p>${x.title}</p><small>NT$${x.price} × ${x.qty}</small></div><button class="btn small secondary" onclick="removeCartItem(${i})" aria-label="移除${x.title}">移除</button></div>`).join(''):'<div class="cart-empty">購物車還沒有商品<br>來挑一杯喜歡的咖啡吧 ☕</div>'}
-    function removeCartItem(idx){if(!cartItems[idx])return;const title=cartItems[idx].title;cartItems.splice(idx,1);updateCartUI();toast(`已移除「${title}」`)}
-    function toggleCartDrawer(force){const open=typeof force==='boolean'?force:!$('#cartDrawer').classList.contains('open');$('#cartDrawer').classList.toggle('open',open);$('#cartOverlay').classList.toggle('open',open);document.body.style.overflow=open?'hidden':''}
-    function checkoutCart(){if(!cartItems.length){toast('購物車目前是空的，先挑選喜歡的商品吧！');return}cartItems=[];updateCartUI();toggleCartDrawer(false);toast('訂單已送出！感謝支持新民咖啡 ☕')}
-    function handleStudentDiscount(event){event.preventDefault();const email=$('#studentEmail').value.trim();if(!email.includes('@')){toast('請輸入有效的學校信箱');return}if(!email.toLowerCase().endsWith('.edu.tw')){toast('請使用 .edu.tw 學校信箱申請學生優惠');return}event.currentTarget.reset();toast('資格確認成功！學生 85 折優惠已為你準備好 🎓')}
-    $('#openCart').addEventListener('click',()=>toggleCartDrawer(true));document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleCartDrawer(false)});$('#menuToggle').addEventListener('click',()=>{const menu=$('#navMenu'),open=menu.classList.toggle('open');$('#menuToggle').setAttribute('aria-expanded',String(open));$('#menuToggle').textContent=open?'✕':'☰'});$$('.nav-menu a').forEach(a=>a.addEventListener('click',()=>{$('#navMenu').classList.remove('open');$('#menuToggle').setAttribute('aria-expanded','false');$('#menuToggle').textContent='☰'}));updateCartUI();
+    const toastBox = document.querySelector('#toastBox');
+    let toastTimer;
+    function toast(message) {
+      window.clearTimeout(toastTimer);
+      toastBox.textContent = message;
+      toastBox.classList.add('show');
+      toastTimer = window.setTimeout(() => toastBox.classList.remove('show'), 2500);
+    }
+
+    const cupsInput = document.querySelector('#cupsInput');
+    const priceInput = document.querySelector('#priceInput');
+    function calculateSavings() {
+      const cups = Number(cupsInput.value);
+      const price = Number(priceInput.value);
+      const savings = Math.max(0, (price - 10) * cups * 365);
+      document.querySelector('#cupsVal').textContent = `${cups} 杯`;
+      document.querySelector('#priceVal').textContent = `$${price}`;
+      document.querySelector('#savingsYear').textContent = `$${savings.toLocaleString('zh-TW')}`;
+      document.querySelector('#savingsDesc').textContent = savings >= 50000 ? '這筆預算可以安排一趟小旅行！' : savings >= 25000 ? '把省下的預算留給更想要的事！' : '每天一點點，累積起來也很有感。';
+    }
+    cupsInput.addEventListener('input', calculateSavings);
+    priceInput.addEventListener('input', calculateSavings);
+    calculateSavings();
+
+    document.querySelectorAll('.filter-btn').forEach(button => button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.hidden = category !== 'all' && card.dataset.category !== category;
+      });
+    }));
+
+    const quizAnswers = { 1: 0, 2: 0, 3: 0 };
+    document.querySelectorAll('.quiz-question').forEach(question => question.querySelectorAll('.option').forEach(button => button.addEventListener('click', () => {
+      question.querySelectorAll('.option').forEach(option => option.classList.remove('selected'));
+      button.classList.add('selected');
+      quizAnswers[question.dataset.question] = Number(button.dataset.score);
+    })));
+    document.querySelector('#quizSubmit').addEventListener('click', () => {
+      if (Object.values(quizAnswers).some(score => score === 0)) {
+        toast('先完成三題，再看看你的日常指數！');
+        return;
+      }
+      const score = Math.min(99, Math.round(Object.values(quizAnswers).reduce((sum, value) => sum + value, 0) / 110 * 100));
+      const title = score >= 80 ? '行程滿檔型：記得安排休息！' : score >= 50 ? '穩定前進型：補水與咖啡都別忘！' : '從容規劃型：維持舒服的步調！';
+      document.querySelector('#quizResultTitle').textContent = `${score}%｜${title}`;
+      document.querySelector('#quizResultText').textContent = score >= 80 ? '試試濃郁深焙豆，並記得適時休息。' : score >= 50 ? '濾掛或中焙咖啡都能配合你的日常安排。' : '挑一款喜歡的咖啡，享受輕鬆沖泡時光。';
+      const result = document.querySelector('#quizResultBox');
+      result.classList.add('active');
+      requestAnimationFrame(() => { document.querySelector('#quizMeter').style.width = `${score}%`; });
+    });
+
+    let streakCount = 0;
+    let checkedIn = false;
+    function triggerStreakCheckin() {
+      if (checkedIn) {
+        toast('今天已經打卡過囉，記得安排休息！');
+        return;
+      }
+      checkedIn = true;
+      streakCount += 1;
+      document.querySelector('#navStreakCount').textContent = streakCount;
+      document.querySelector('#streakDisplay').textContent = streakCount;
+      document.querySelector('#checkinMessage').textContent = '打卡完成，今天也辛苦了！';
+      document.querySelector('#checkinButton').textContent = '今日已完成';
+      toast('今日打卡完成，記得補充水分！');
+    }
+    document.querySelector('#checkinButton').addEventListener('click', triggerStreakCheckin);
+    document.querySelector('#navCheckin').addEventListener('click', triggerStreakCheckin);
+
+    let timerSeconds = 90;
+    let timerInterval = null;
+    const timerDisplay = document.querySelector('#timerDisplay');
+    const timerToggle = document.querySelector('#timerToggle');
+    function formatTime(seconds) { return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; }
+    function renderTimer() { timerDisplay.textContent = formatTime(timerSeconds); }
+    function stopTimer() { window.clearInterval(timerInterval); timerInterval = null; timerToggle.textContent = '開始'; }
+    timerToggle.addEventListener('click', () => {
+      if (timerInterval) {
+        stopTimer();
+        timerToggle.textContent = '繼續';
+        return;
+      }
+      if (timerSeconds <= 0) timerSeconds = 90;
+      timerToggle.textContent = '暫停';
+      timerInterval = window.setInterval(() => {
+        timerSeconds -= 1;
+        renderTimer();
+        if (timerSeconds <= 0) {
+          stopTimer();
+          timerToggle.textContent = '再計一次';
+          toast('90 秒完成，依喜好享用咖啡！');
+        }
+      }, 1000);
+    });
+    document.querySelector('#timerReset').addEventListener('click', () => {
+      stopTimer();
+      timerSeconds = 90;
+      renderTimer();
+    });
+
+    const cartItems = [];
+    const cartDrawer = document.querySelector('#cartDrawer');
+    const cartOverlay = document.querySelector('#cartOverlay');
+    function toggleCartDrawer(open) {
+      cartDrawer.classList.toggle('open', open);
+      cartOverlay.classList.toggle('open', open);
+      cartDrawer.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) document.querySelector('#cartClose').focus();
+    }
+    function updateCartUI() {
+      const list = document.querySelector('#cartItemList');
+      document.querySelector('#cartCount').textContent = cartItems.length;
+      document.querySelector('#cartTotalText').textContent = `NT$${cartItems.reduce((sum, item) => sum + item.price, 0).toLocaleString('zh-TW')}`;
+      if (!cartItems.length) {
+        list.innerHTML = '<p class="empty-cart">購物籃還沒有商品，去挑一款喜歡的咖啡吧！</p>';
+        return;
+      }
+      list.innerHTML = cartItems.map((item, index) => `<div class="cart-item"><div><strong>${item.title}</strong><span>NT$${item.price}</span></div><button class="remove-btn" type="button" data-remove="${index}" aria-label="移除${item.title}">移除</button></div>`).join('');
+      list.querySelectorAll('[data-remove]').forEach(button => button.addEventListener('click', () => {
+        cartItems.splice(Number(button.dataset.remove), 1);
+        updateCartUI();
+      }));
+    }
+    document.querySelectorAll('[data-add]').forEach(button => button.addEventListener('click', () => {
+      cartItems.push({ title: button.dataset.add, price: Number(button.dataset.price) });
+      updateCartUI();
+      toast(`已加入「${button.dataset.add}」`);
+    }));
+    document.querySelector('#cartOpen').addEventListener('click', () => toggleCartDrawer(true));
+    document.querySelector('#cartClose').addEventListener('click', () => toggleCartDrawer(false));
+    cartOverlay.addEventListener('click', () => toggleCartDrawer(false));
+    document.querySelector('#checkoutButton').addEventListener('click', () => {
+      if (!cartItems.length) {
+        toast('購物籃目前是空的，先挑選喜歡的咖啡吧！');
+        return;
+      }
+      toast('這是展示頁面，尚未串接實際結帳。');
+      cartItems.length = 0;
+      updateCartUI();
+      toggleCartDrawer(false);
+    });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') toggleCartDrawer(false); });
+
+    document.querySelector('#discountForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const email = document.querySelector('#studentEmail').value.trim();
+      if (!email.includes('@')) {
+        toast('請輸入有效的電子郵件地址。');
+        return;
+      }
+      toast('優惠申請已收到！此頁為展示流程，未進行學籍驗證。');
+      event.currentTarget.reset();
+    });
+
+    const menuToggle = document.querySelector('#menuToggle');
+    const navLinks = document.querySelector('#navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '開啟導覽選單');
+      menuToggle.textContent = '☰';
+    }));
   </script>
 </body>
 </html>
